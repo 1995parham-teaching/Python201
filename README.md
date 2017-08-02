@@ -1,5 +1,5 @@
 # Python201
 
-**In the memory of our friends who not between us right now**
+**In the memory of our friends who not among us right now**
 
 ## Introduction
