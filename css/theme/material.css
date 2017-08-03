@@ -4,6 +4,7 @@
  *
  * This theme is Copyright (C) 2012-2013 Owen Versteeg, http://owenversteeg.com - it is MIT licensed.
  */
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
 .reveal a {
   line-height: 1.3em; }
 
@@ -24,7 +25,7 @@ body {
   background-color: #FAFAFA; }
 
 .reveal {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+  font-family: "Roboto", Palatino, FreeSerif, serif;
   font-size: 36px;
   font-weight: normal;
   color: #212121; }
@@ -50,7 +51,7 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #424242;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+  font-family: "Roboto", Palatino, FreeSerif, serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
