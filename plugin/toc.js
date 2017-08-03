@@ -10,22 +10,21 @@
 const toc = {
   initToCOnLoad: function (titles) {
     let sections = document.getElementsByClassName('toc')
+
     for (let section of sections) {
       const titlesListElement = document.createElement('ul');
 
       for (let title of titles) {
         let node = document.createElement('li');
+
+        if (section.dataset.selected && section.dataset.selected === title) {
+          node.className += 'material-select'
+        }
+
         node.appendChild(document.createTextNode(title));
         titlesListElement.appendChild(node);
       }
 
-      if (section.dataset.selected) {
-        for (let i = 0; i < titlesListElement.children.length; i++) {
-          if (titlesListElement.children[i].innerText === section.dataset.selected) {
-            titlesListElement.children[i].className += 'material-select'
-          }
-        }
-      }
       section.appendChild(titlesListElement);
     }
   }
