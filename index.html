@@ -58,6 +58,12 @@
             <p>Lian Smart Cloud based Monitoring</p>
           </section>
         </section>
+        <section>
+          <div class="toc"></div>
+        </section>
+        <section>
+          <div class="toc" data-selected="Introduction"></div>
+        </section>
      </div>
     </div>
 		<script src="lib/js/head.min.js"></script>
@@ -72,7 +78,11 @@
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/toc.js', async: true, callback: function() { toc.initToCOnLoad([
+            'Introduction',
+            'Review on Basis'
+          ]); } }
 				]
 			});
 		</script>
