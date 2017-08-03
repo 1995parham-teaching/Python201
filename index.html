@@ -101,6 +101,16 @@
           </section>
           <section>
             <p><span class="material-italic">__doc__</span> is useful to provide some documentation</p>
+            <p><span class="material-italic">exec</span> function supports dynamic execution of Python code</p>
+          </section>
+          <section>
+            <h2>Function documentation, bad way</h2>
+            <pre><code class="python">
+            def function_bad():
+                '''print('Hello from the doc')'''
+                pass
+            print(exec(function_bad.__doc__))
+            </code></pre>
           </section>
         </section>
      </div>
