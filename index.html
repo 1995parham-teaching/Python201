@@ -84,6 +84,25 @@
               print('hello world')
           </code></pre>
         </section>
+        <section>
+          <div class="toc" data-selected="Functions"></div>
+        </section>
+        <section>
+          <section>
+            <h2>Functions</h2>
+            <pre><code class="python">
+            def function_name(param1, param2):
+                '''
+                I am your function documentation but you can use me
+                in other and maybe bad ways.
+                '''
+                print('You saw me in the past')
+            </code></pre>
+          </section>
+          <section>
+            <p><span class="material-italic">__doc__</span> is useful to provide some documentation</p>
+          </section>
+        </section>
      </div>
     </div>
 		<script src="lib/js/head.min.js"></script>
@@ -102,6 +121,7 @@
           { src: 'plugin/toc.js', async: true, callback: function() { toc.initToCOnLoad([
             'Introduction',
             'Review on Basis',
+            'Functions',
             'Kivy or Kiwi ?!'
           ]); } }
 				]
