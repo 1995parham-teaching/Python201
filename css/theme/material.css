@@ -5,6 +5,7 @@
  * This theme is Copyright (C) 2012-2013 Owen Versteeg, http://owenversteeg.com - it is MIT licensed.
  */
 @import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 .reveal a {
   line-height: 1.3em; }
 
