@@ -138,6 +138,45 @@
               Create Person class that can say hello and walk, then create Runner class that inherits from Person.
             </p>
           </section>
+          <section>
+            <pre><code class="python">
+            class Person:
+                def __init__(self, name, age):
+                    self.name = name
+                    self.age = age
+
+                def say(self):
+                    print('%s: Hello' % self.name)
+
+                def walk(self):
+                    print('Telgh Telgh')
+
+
+            class Runner(Person):
+                def __init__(self, name, age):
+                    super(name, age)
+
+                def walk(self):
+                    print('Lekh Lekh')
+            </code></pre>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/person.py" download><i class="material-icons">code</i> person.py</a>
+          </section>
+          <section>
+            <h2>Lamba</h2>
+            <p>Lambda expressions (sometimes called lambda forms) are used to create <span class="material-bold">anonymous functions</span>.</p>
+            <pre><code class="python">
+            lambda x, y: x * y + 1
+            </code></pre>
+          </section>
+          <section>
+            <h2>So what ?!</h2>
+            <pre><code class="python">
+            import functools
+
+            foo = [1, 2, 3]
+            functools.reduce(lambda x, y: x + y, foo)
+            </code></pre>
+          </section>
         </section>
         <section>
           <div class="toc" data-selected="Functions"></div>
