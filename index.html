@@ -172,6 +172,120 @@
         </section>
         <section>
           <section>
+            <h2>Storing Data, the right way</h2>
+            <ul>
+              <li>List - a mutable list of items</li>
+              <li>Dict - unsorted but a fast map of items</li>
+              <li>Set - like a dict without values</li>
+              <li>Tuple - the immutable and hashable list</li>
+            </ul>
+          </section>
+          <section>
+            <h2>List</h2>
+            <h4>Vector Like Implementation</h4>
+            <table>
+              <tr>
+                <th>Get</th>
+                <th>Set</th>
+                <th>Lenght</th>
+                <th>Insert</th>
+                <th>Remove</th>
+              </tr>
+              <tr>
+                <td>O(1)</td>
+                <td>O(1)</td>
+                <td>O(1)</td>
+                <td>O(n)</td>
+                <td>O(n)</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h2>List (cont’d)</h2>
+            <pre><code class="python">
+            items = list(range(10))
+            primes = [2, 3, 5, 7]
+
+            print([item for item in items])
+            print([item for item in items if item not in primes])
+            print([item * 2 for item in items if item not in primes])
+            </code></pre>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/list.py" download><i class="material-icons">code</i> list.py</a>
+          </section>
+          <section>
+            <h2>Dict</h2>
+            <h4><span class="material-italic">__hash__</span>(key)</h4>
+            <table>
+              <tr>
+                <th>Get</th>
+                <th>Set</th>
+                <th>Del</th>
+              </tr>
+              <tr>
+                <td>O(1)</td>
+                <td>O(1)</td>
+                <td>O(1)</td>
+              </tr>
+            </table>
+            <h5>Do you believe it ?</h5>
+          </section>
+          <section>
+            <h2>Set</h2>
+            <table>
+              <tr>
+                <th>Expression</th>
+                <th>Explanation</th>
+              </tr>
+              <tr>
+                <td><pre><code class="python">spam &amp; eggs</code></pre></td>
+                <td>Every item in both</td>
+              </tr>
+              <tr>
+                <td><pre><code class="python">spam | eggs</code></pre></td>
+                <td>Every item in either or both</td>
+              </tr>
+              <tr>
+                <td><pre><code class="python">spam - eggs</code></pre></td>
+                <td>Every item in the first but not the latter</td>
+              </tr>
+              <tr>
+                <td><pre><code class="python">spam ^ eggs</code></pre></td>
+                <td>Every item in either but not both</td>
+              </tr>
+              <tr>
+                <td><pre><code class="python">spam &lt; eggs</code></pre></td>
+                <td>True if every item in the first is contained in the latter</td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h2>Tuple</h2>
+            <p>
+              There are few cases whre a <span class="material-italic">tuple</span> offers some really useful
+              functionalities that a <span class="material-bold">list</span> does not.
+            </p>
+          </section>
+          <section>
+            <h2>Tuple (cont'd)</h2>
+            <pre><code class="python">
+            t1 = 1, 3, 7, 3
+            t2 = (1, 3, 7, 2)
+
+            data = dict()
+            data[t1] = 'me'
+            data[t2] = 'who'
+
+            import pprint
+
+            pprint.pprint(data)
+            </code></pre>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/tuple.py" download><i class="material-icons">code</i> tuple.py</a>
+          </section>
+          <section>
+            <h2>Data Structure is fun</h2>
+            <a href="https://hg.python.org/cpython/file/default/Lib/collections/__init__.py">See Me</a>
+          </section>
+          <section>
             <h2>&lt;Code Time.py&gt;</h2>
             <p>
               Create Person class that can say hello and walk, then create Runner class that inherits from Person.
