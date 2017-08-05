@@ -283,6 +283,37 @@
               and <span class="material-italic">returning the cached result</span> when the same inputs occur again.
             </p>
           </section>
+          <section>
+            <h2>&lt;Code Time.py&gt;</h2>
+            <p>
+              Write recuresive function with <span class="material-bold">memoization</span> for calculating Nth term in the Fibonacci sqeuence
+            </p>
+            <p>
+              0: 1, 1: 1, 2: 2, 3: 3, 4: 5, ...
+            </p>
+          </section>
+          <section>
+            <pre><code class="python">
+            memory = {}
+
+            def m_fibonacci(n):
+                if n == 1 or n == 0:
+                    return 1
+                if n in memory:
+                    return memory[n]
+                memory[n] = m_fibonacci(n - 1) + m_fibonacci(n - 2)
+                return memory[n]
+
+            print(m_fibonacci(10))
+            </code></pre>
+          </section>
+          <section>
+            <h2>Functions are first-level citizens in python</h2>
+            <p>
+              To say that functions are first-class in a certain programming language means that they can be passed around and manipulated
+              similarly to how you would pass around and manipulate other kinds of objects.
+            </p>
+          </section>
         </section>
      </div>
     </div>
