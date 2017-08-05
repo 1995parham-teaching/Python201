@@ -416,6 +416,25 @@
             <p><i style="font-size: 96px;" class="material-icons">question_answer</i></p>
           </section>
           <section>
+            <pre><code class="python">
+            import functools
+
+
+            def many_arg_func(list):
+                s = functools.reduce(lambda x, y: x + y, list)
+                return s
+
+            many_arg_func([1, 2, 3, 4])
+            </code></pre>
+            <h2>But I want to call my function normally :\</h2>
+          </section>
+          <section>
+            <h2>*args, **kwargs</h2>
+            <p>The syntax is the * and **. The names *args and **kwargs are only by convention but there's no hard requirement to use them.</p>
+            <p>You would use <span class="material-italic">*args</span> when you're not sure how many arguments might be passed to your function</p>
+            <p>Similarly, <span class="material-bold">**kwargs</span> allows you to handle named arguments that you have not defined in advance</p>
+          </section>
+          <section>
             <h2>Fibonacci</h2>
             <p>
               F(n) = F(n - 1) + F(n - 2)
