@@ -243,10 +243,16 @@
             <pre><code class="python">
             def f1():
                 a = 1
+                b = []
+
                 def f2():
                     print(a)
+                    b.append(1)
+                print(b)
                 f2()
                 print(a)
+                print(b)
+
             f1()
             </code></pre>
           </section>
