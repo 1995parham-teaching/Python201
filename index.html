@@ -484,6 +484,36 @@
             </code></pre>
             <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/function-citizen.py" download><i class="material-icons">code</i> function-citizen.py</a>
           </section>
+          <section>
+            <h2>no need to repeat all arguments every time</h2>
+            <pre><code class="python">
+            def partial(f, *args):
+                param = args
+
+                def _f(*args, **kwargs):
+                    return f(*param, *args, **kwargs)
+
+                return _f
+
+
+            def say(name, message):
+                print(f'{message} to {name}')
+
+
+            say('parham', 'hello')
+
+            say_to_parham = partial(say, 'parham')
+            say_to_parham('bye bye')
+            </code></pre>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/partial.py" download><i class="material-icons">code</i> partial.py</a>
+          </section>
+          <section>
+            <h2>Event Handling</h2>
+            <p>
+              You can pass your callback into library for specific event and then
+              customize its behaviour
+            </p>
+          </section>
         </section>
      </div>
     </div>
