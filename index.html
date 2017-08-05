@@ -435,6 +435,25 @@
             <p>Similarly, <span class="material-bold">**kwargs</span> allows you to handle named arguments that you have not defined in advance</p>
           </section>
           <section>
+            <pre><code class="python">
+            def hello(param1, *args, **kwargs):
+                print(param1, args, kwargs)
+
+            hello(1, 2, 3, 4, 5, h=6)
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="python">
+            import functools
+
+            def many_arg_func(*args):
+                s = functools.reduce(lambda x, y: x + y, list)
+                return s
+
+            many_arg_func([1, 2, 3, 4])
+            </code></pre>
+          </section>
+          <section>
             <h2>Fibonacci</h2>
             <p>
               F(n) = F(n - 1) + F(n - 2)
