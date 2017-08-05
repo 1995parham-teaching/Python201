@@ -238,6 +238,18 @@
               Names preassigned in the built-in names module
             </p>
           </section>
+          <section>
+            <h2>Scope in python, The LEGB Rule. (cont’d)</h2>
+            <pre><code class="python">
+            def f1():
+                a = 1
+                def f2():
+                    print(a)
+                f2()
+                print(a)
+            f1()
+            </code></pre>
+          </section>
         </section>
         <section>
           <div class="toc" data-selected="Functions"></div>
