@@ -22,7 +22,7 @@ class Person:
 
 class Runner(Person):
     def __init__(self, name, age):
-        super(name, age)
+        super().__init__(name, age)
 
     def walk(self):
         print('Lekh Lekh')
