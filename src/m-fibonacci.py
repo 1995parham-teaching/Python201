@@ -17,4 +17,5 @@ def m_fibonacci(n):
     memory[n] = m_fibonacci(n - 1) + m_fibonacci(n - 2)
     return memory[n]
 
-print(m_fibonacci(10))
+
+print(m_fibonacci(4))
