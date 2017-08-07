@@ -741,19 +741,103 @@
           <section>
             <h2>&lt;Code Time.py&gt;</h2>
             <p>
-              Read input from user and then for each command he has entered run its mapped function.
+              Giving input from user and running appropriate functions for his/her entered commands.
             </p>
-          </section> 
+          </section>
         </section>
         <section>
           <div class="toc" data-selected="Class"></div>
         </section>
         <section>
           <section>
+            <h2>Class</h2>
+            <pre><code class="python">
+            class Person:
+                '''
+                Person class is used for representation person
+                '''
+                def say():
+                    print("Hello")
+            </code></pre>
+          </section>
+          <section>
             <h2>Multi-Inheritance</h2>
+            <pre><code class="python">
+            class SubClassName(ParentClass1[, ParentClass2]):
+                """
+                Optional class documentation string
+                """
+                # class code
+            </code></pre>
+          </section>
+          <section>
+            <h2>C3 Linearization</h2>
+            <p>
+              The C3 superclass linearization is an algorithm used primarily to obtain the order in which methods should be inherited
+              (the "linearization") in the presence of multiple inheritance, and is often termed Method Resolution Order (MRO).
+            </p>
+          </section>
+          <section>
+            <h2>@staticmethod</h2>
+            <p>A static method does not receive an implicit first argument.</p>
+            <h2>@classmethod</h2>
+            <p>A class method receives the class as implicit first argument, just like an instance method receives the instance.</p>
+          </section>
+          <section>
+            <h2>@classmethod</h2>
+            <pre><code class="python">
+            class C:
+                @classmethod
+                def f(cls, arg1, arg2, ...): ...
+            </code></pre>
+            <pre><code class="python">
+            class C:
+                @staticmethod
+                def f(arg1, arg2, ...): ..
+            </code></pre>
           </section>
           <section>
             <h2>Meta-Class</h2>
+            <img src="img/meta-class.jpg" alt="meta-class" width="500px">
+          </section>
+          <section>
+            <h2>Meta-Class (cont'd)</h2>
+            <p>
+              Classes are callable. These objects normally act as factories for new instances of themselves,
+              but variations are possible for class types that override <span class="material-italic">__new__()</span>.
+              The arguments of the call are passed to <span class="material-italic">__new__()</span> and,
+              in the typical case, to <span class="material-italic">__init__()</span> to initialize the new instance.
+            </p>
+          </section>
+          <section>
+            <h2>Meta-Class (cont'd)</h2>
+            <p>
+              Instances of arbitrary classes can be made callable
+              by defining a <span class="material-italic">__call__()</span> method in their class.
+            </p>
+          </section>
+          <section>
+            <h2>Meta-Class (cont'd)</h2>
+            <p>
+              Once the appropriate metaclass has been identified, then the class namespace is prepared.
+              If the metaclass has a <span class="material-italic">__prepare__</span> attribute,
+              it is called as <span class="material-italic">namespace = metaclass.__prepare__(name, bases, **kwds)</span>
+              (where the additional keyword arguments, if any, come from the class definition).
+            </p>
+          </section>
+          <section>
+            <h2>Meta-Class (Python)</h2>
+          </section>
+          <section>
+            <h2>Meta-Class (Python 3.0)</h2>
+          </section>
+          <section>
+            <h2>Meta-Class (Python 3.6)</h2>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/meta-class-3.py" download><i class="material-icons">code</i> meta-class-3.py</a>
+          </section>
+          <section>
+            <h2>Learn class customization in deep</h2>
+            <a href="https://docs.python.org/3/reference/datamodel.html">See Me</a>
           </section>
         </section>
      </div>
