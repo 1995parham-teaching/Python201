@@ -2,32 +2,29 @@
 # ========================================
 # [] File Name : meta-class-2.py
 #
-# [] Creation Date : 08-08-2017
+# [] Creation Date : 05-08-2017
 #
 # [] Created By : Parham Alvani (parham.alvani@gmail.com)
 # =======================================
+from typing import List
 
 
-class ParhamClass(type):
+class BotFather:
+    bots: List[type] = []
 
-    def __new__(cls, name, bases, namespace, **kwargs):
-        print('cls: ', cls)
-        print('name: ', name)
-        print('bases: ', bases)
-        print('namespace: ', namespace)
-        print('kwargs: ', kwargs)
-        result = super().__new__(cls, name, bases, namespace)
-
-        return result
+    @classmethod
+    def __init_subclass__(cls, name, **kwargs):
+        super().__init_subclass__(**kwargs)
+        print("New subclass from BotFather")
+        BotFather.bots.append(cls)
 
 
-class A(str, when='never', metaclass=ParhamClass):
-    name = 'parham'
+print(BotFather.bots)
 
-    def one(): pass
 
-    def two(): pass
+class HelloBot(BotFather, name='hello'):
+    def __init__(self):
+        print("New instance from HelloBot")
 
-    def three(): pass
 
-    def four(): pass
+print(BotFather.bots)
