@@ -712,9 +712,38 @@
                 pass
             </code></pre>
             <p>
-              <span class="material-italic">decorator</span> is a name of decorator function not a call of decorator function.
+              <span class="material-italic">decorator</span> is a name for decorator function and will not actually call the function
             </p>
           </section>
+          <section>
+            <h2>Parameter in decorators (cont'd)</h2>
+            <h4>How to pass parameters into decorator when we are not caller</h4>
+          </section>
+          <section>
+            <h2>Parameter in decorators (cont'd)</h2>
+            <p>Get parameters and create decorator in place.</p>
+            <pre><code class="">
+            import functools
+
+
+            def decorator_args(arg1, arg2):
+                def decorator(f):
+                    @functools.wraps(f)
+                    def wrapper():
+                        print(arg1)
+                        f()
+                        print(arg2)
+                    return wrapper
+                return decorator
+            </code></pre>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/decorator-args.py" download><i class="material-icons">code</i> decorator-args.py</a>
+          </section>
+          <section>
+            <h2>&lt;Code Time.py&gt;</h2>
+            <p>
+              Read input from user and then for each command he has entered run its mapped function.
+            </p>
+          </section> 
         </section>
         <section>
           <div class="toc" data-selected="Class"></div>
