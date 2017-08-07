@@ -13,7 +13,7 @@ class BotFather:
     bots: List[type] = []
 
     @classmethod
-    def __init_subclass__(cls, **kwargs):
+    def __init_subclass__(cls, name, **kwargs):
         super().__init_subclass__(**kwargs)
         print("New subclass from BotFather")
         BotFather.bots.append(cls)
@@ -22,9 +22,7 @@ class BotFather:
 print(BotFather.bots)
 
 
-class HelloBot(BotFather):
-    name: str = 'hello'
-
+class HelloBot(BotFather, name='hello'):
     def __init__(self):
         print("New instance from HelloBot")
 
