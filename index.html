@@ -389,6 +389,31 @@
             </code></pre>
             <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/scope.py" download><i class="material-icons">code</i> scope.py</a>
           </section>
+          <section>
+            <h2>Python Packaging</h2>
+            <pre><code class="bash">
+            parent/
+                __init__.py
+                one/
+                    __init__.py
+                two/
+                    __init__.py
+                three/
+                    __init__.py
+            </code></pre>
+          </section>
+          <section>
+            <h2>Python Packaging (cont'd)</h2>
+            <p>Python defines two types of packages, regular packages and namespace packages.</p>
+            <p>Regular packages are traditional packages as they existed in Python 3.2 and earlier.</p>
+          </section>
+          <section>
+            <h2>Python Packaging (cont'd)</h2>
+            <p>
+              A regular package is typically implemented as a directory containing an __init__.py file.
+              When a regular package is imported, this __init__.py file is implicitly executed, and the objects it defines are bound to names in the package’s namespace.
+            </p>
+          </section>
         </section>
         <section>
           <div class="toc" data-selected="Functions"></div>
