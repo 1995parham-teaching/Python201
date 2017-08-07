@@ -660,6 +660,45 @@
             </code></pre>
           </section>
           <section>
+            <h2>Decorators (cont'd)</h2>
+            <p>A Python decorator is a specific change to the Python syntax that allows us to more conveniently alter functions and methods.</p>
+            <p>A decorator is just another function which takes <span class="material-bold">a function</span> and returns one.</p>
+          </section>
+          <section>
+            <h2>Function Wrapping</h2>
+            <pre><code class="python">
+            import functools
+
+            def my_decorator(some_function):
+                @functools.wraps(some_function)
+                def wrapper():
+
+                    print("Something is happening before some_function() is called.")
+
+                    some_function()
+
+                    print("Something is happening after some_function() is called.")
+
+                return wrapper
+
+
+            @my_decorator
+            def just_some_function():
+                print("Wheee!")
+
+
+            just_some_function()
+            </code></pre>
+          </section>
+          <section>
+            <h2>Function Wrapping (cont'd)</h2>
+            <p>
+              Without the use of this decorator factory,
+              <span class="material-bold">the name</span> of the <span class="material-italic">just_some_function</span> function would have been 'wrapper',
+              and <span class="material-bold">the docstring</span> of the original example() would have been lost.
+            </p>
+          </section>
+          <section>
             <h2>&lt;Code Time.py&gt;</h2>
             <p>
               Using flask create simple web server for handling <span class="material-italic">/hello</span> get request.
