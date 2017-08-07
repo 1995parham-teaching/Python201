@@ -844,10 +844,33 @@
             </p>
           </section>
           <section>
-            <h2>Meta-Class (Python)</h2>
-          </section>
-          <section>
             <h2>Meta-Class (Python 3.0)</h2>
+            <pre><code class="python">
+						class ParhamClass(type):
+
+                def __new__(cls, name, bases, namespace, **kwargs):
+                    print('cls: ', cls)
+                    print('name: ', name)
+                    print('bases: ', bases)
+                    print('namespace: ', namespace)
+                    print('kwargs: ', kwargs)
+                    result = super().__new__(cls, name, bases, namespace)
+
+                    return result
+
+
+            class A(str, when='never', metaclass=ParhamClass):
+                name = 'parham'
+
+                def one(): pass
+
+                def two(): pass
+
+                def three(): pass
+
+                def four(): pass
+            </code></pre>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/meta-class-1.py" download><i class="material-icons">code</i> meta-class-1.py</a>
           </section>
           <section>
             <h2>Meta-Class (Python 3.6)</h2>
@@ -865,7 +888,7 @@
                 def __init__(self):
                     print('New instance from HelloBot')
             </code></pre>
-            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/meta-class-3.py" download><i class="material-icons">code</i> meta-class-3.py</a>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/meta-class-2.py" download><i class="material-icons">code</i> meta-class-2.py</a>
           </section>
           <section>
             <h2>Learn class customization in deep</h2>
