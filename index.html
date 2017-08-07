@@ -840,6 +840,20 @@
           </section>
           <section>
             <h2>Meta-Class (Python 3.6)</h2>
+            <pre><code class="python">
+            class BotFather:
+                bots = []
+
+                @classmethod
+                def __init_subclass__(cls, name, **kwargs):
+                    super().__init_subclass__(**kwargs)
+                    print("New subclass from BotFather")
+                    BotFather.bots.append(cls)
+
+            class HelloBot(BotFather, name='hello'):
+                def __init__(self):
+                    print('New instance from HelloBot')
+            </code></pre>
             <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/meta-class-3.py" download><i class="material-icons">code</i> meta-class-3.py</a>
           </section>
           <section>
