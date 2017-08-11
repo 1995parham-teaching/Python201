@@ -979,15 +979,37 @@
 
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/toc.js', async: true, callback: function() { toc.initToCOnLoad([
-            'Introduction',
-            'Review on Basis',
-            'Functions',
-            'Class',
-            'Kivy or Kiwi ?!',
-            'Async-Await'
-          ]); } }
+          {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            condition: function() {
+              if (typeof hljs !== undefined) {
+                return true;
+              } else {
+                return false;
+              }
+            },
+            callback: function() { hljs.initHighlightingOnLoad(); }
+          },
+          {
+            src: 'plugin/toc.js',
+            async: true,
+            condition: function() {
+              if (typeof toc !== undefined) {
+                return true;
+              } else {
+                return false;
+              }
+            },
+            callback: function() { toc.initToCOnLoad([
+              'Introduction',
+              'Review on Basis',
+              'Functions',
+              'Class',
+              'Kivy or Kiwi ?!',
+              'Async-Await'
+            ]); }
+          }
         ]
       });
     </script>
