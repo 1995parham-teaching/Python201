@@ -29,8 +29,16 @@ $linkColor: #FF5722;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: #FFEB3B;
 
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
 .reveal a {
   line-height: 1.3em;
+}
+
+.reveal blockquote {
+	background: darken( $backgroundColor, 10% )
 }
 
 .material {
@@ -48,8 +56,3 @@ $selectionBackgroundColor: #FFEB3B;
 		color: #FF9108;
 	}
 }
-
-
-// Theme template ------------------------------
-@import "../template/theme";
-// ---------------------------------------------
