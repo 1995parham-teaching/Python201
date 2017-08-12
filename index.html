@@ -862,10 +862,31 @@
           </section>
           <section>
             <h2>Duck Typing</h2>
-            <p></p>
+            <p>It is a term used in dynamic languages that do not have strong typing.</p>
+            <p>The idea is that you don't need a type in order to invoke an existing method on an object - if a method is defined on it, you can invoke it.</p>
+            <blockquote>If it looks like a duck and quacks like a duck, it's a duck</blockquote>
           </section>
           <section>
             <h2>Boolean</h2>
+            <h4>__bool__</h4>
+            <p>Called to implement truth value testing and the built-in operation <span class="material-italic">bool()</span></p>
+          </section>
+          <section>
+            <h2>Boolean (cont'd)</h2>
+            <pre><code class="python">
+            class IsBool:
+                def __init__(self, age):
+                    self.age = age
+
+                def __bool__(self):
+                    return self.age &gt; 20
+
+            if is_bool:
+                print("is_bool.age &gt; 20")
+            else:
+                print("is_bool.age &lt;= 20")
+            </code></pre>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/class/bool.py" download><i class="material-icons">code</i> bool.py</a>
           </section>
           <section>
             <h2>@abc.abstractmethod</h2>
@@ -963,6 +984,14 @@
           <section>
             <h2>Learn class customization in deep</h2>
             <a href="https://docs.python.org/3/reference/datamodel.html">See Me</a>
+          </section>
+        </section>
+        <section>
+          <div class="toc" data-selected="Kivy or Kiwi ?!"></div>
+        </section>
+        <section>
+          <section>
+            <h2>Kivy or Kiwi</h2>
           </section>
         </section>
      </div>
