@@ -1063,6 +1063,25 @@
           </section>
           <section>
             <h2>KV Design Language</h2>
+            <p>
+              Kivy provides a design language specifically geared towards easy and scalable GUI Design.
+              The language makes it simple to separate the interface design from the application logic,
+              adhering to the <span class="material-italic">separation of concerns principle</span>.
+            </p>
+          </section>
+          <section>
+            <h2>KV Design Language (cont'd)</h2>
+            <p>There are two ways to load Kv code into your application:</p>
+            <ul>
+              <li>By name convention</li>
+              <pre><code class="python" data-trim data-noescape>
+              MyApp -&gt; my.kv
+              </code></pre>
+              <li>Builder</li>
+              <pre><code class="python" data-trim data-noescape>
+              Builder.load_file('path/to/file.kv')
+              </code></pre>
+            </ul>
           </section>
         </section>
      </div>
