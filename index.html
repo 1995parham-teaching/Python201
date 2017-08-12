@@ -996,6 +996,22 @@
             <img src="img/kivy.png" width="250px">
           </section>
           <section>
+            <h4>
+              Open source Python library for rapid development of applications
+              that make use of innovative user interfaces, such as multi-touch apps.
+            </h4>
+          </section>
+          <section>
+            <pre><code class="python">
+            from kivy.app import App
+            from kivy.uix.button import Button
+
+            class TestApp(App):
+                def build(self):
+                    return Button(text='Hello World')
+
+            TestApp().run()
+            </code></pre>
           </section>
         </section>
      </div>
