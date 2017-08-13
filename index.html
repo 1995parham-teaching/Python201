@@ -1029,6 +1029,46 @@
             <p>Descriptors were introduced to Python way back in version 2.2.</p>
             <p>They provide the developer with the ability to add <span class="material-bold">managed attributes</span> to objects.</p>
           </section>
+          <section>
+            <h2>The Descriptor Protocol</h2>
+            <p>If any of these methods are defined for an object, it is said to be a descriptor.</p>
+            <ul>
+              <li><span class="material-italic">__set__</span></li>
+              <li><span class="material-italic">__get__</span></li>
+              <li><span class="material-italic">__del__</span></li>
+            </ul>
+          </section>
+          <section>
+            <h2>__get__(self, instance, owner)</h2>
+            <p>
+              Called to get the attribute of the owner class (class attribute access) or of an instance of that class (instance attribute access).
+              owner is always the owner class, while instance is the instance that the attribute was accessed through, or None when the attribute is
+              accessed through the owner. This method should return the (computed) attribute value or raise an AttributeError exception.
+            </p>
+          </section>
+          <section>
+            <h2>__set__(self, instance, value)</h2>
+            <p>
+              Called to set the attribute on an instance instance of the owner class to a new value, value.
+            </p>
+          </section>
+          <section>
+            <h2>__del__(self, instnace)</h2>
+            <p>
+              Called to delete the attribute on an instance instance of the owner class.
+            </p>
+          </section>
+          <section>
+            <h2>__set_name__(self, owner, name)</h2>
+            <h5>New in version 3.6.</h5>
+            <p>
+              Called at the time the owning class owner is created. The descriptor has been assigned to name.
+            </p>
+          </section>
+          <section>
+            <pre><code class="python">
+            </code></pre>
+          </section>
         </section>
         <section>
           <div class="toc" data-selected="Kivy or Kiwi ?!"></div>
