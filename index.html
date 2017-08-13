@@ -939,6 +939,21 @@
             </p>
           </section>
           <section>
+            <h2>Person Abstract Class</h2>
+            <pre><code class="python">
+            import abc
+
+
+            class Person(abc.ABC):
+                def say(self):
+                    print('Hello')
+
+                @abc.abstractmethod
+                def walk(self):
+                    raise NotImplementedError()
+            </code></pre>
+          </section>
+          <section>
             <h2>Meta-Class</h2>
             <img src="img/meta-class.jpg" alt="meta-class" width="500px">
           </section>
