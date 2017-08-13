@@ -18,23 +18,39 @@ class RevealAccess:
         self.val = initval
         self.name = name
 
-    def __get__(self, obj, objtype):
-        print('Retrieving', self.name)
+    def __get__(self, instance, owner):
+        print('Retrieving', self.name, instance, owner)
         return self.val
 
-    def __set__(self, obj, val):
-        print('Updating', self.name)
+    def __set__(self, instance, val):
+        print('Updating', self.name, instance, val)
         self.val = val
 
+    def __set_name__(self, owner, name):
+        print('Set name', name, owner)
 
-class MyClass:
+
+class OutClass:
     x = RevealAccess(10, 'var "x"')
     y = 2
 
 
-m = MyClass()
+class InClass:
+    def __init__(self):
+        self.p = RevealAccess(10, 'var "p"')
+
+
+m = OutClass()
 
 print(m.x)
 print(m.y)
 
 m.x = 2
+
+print("###")
+
+n = InClass()
+
+print(n.p)
+
+n.p = 10
