@@ -1067,6 +1067,26 @@
           </section>
           <section>
             <pre><code class="python">
+            class RevealAccess:
+                '''
+                A data descriptor that sets and returns values
+                normally and prints a message logging their access.
+                '''
+
+                def __init__(self, initval=None, name='var'):
+                    self.val = initval
+                    self.name = name
+
+                def __get__(self, instance, owner):
+                    print('Retrieving', self.name, instance, owner)
+                    return self.val
+
+                def __set__(self, instance, val):
+                    print('Updating', self.name, instance, val)
+                    self.val = val
+
+                def __set_name__(self, owner, name):
+                    print('Set name', name, owner)
             </code></pre>
           </section>
         </section>
