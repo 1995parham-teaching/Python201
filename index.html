@@ -1088,6 +1088,7 @@
                 def __set_name__(self, owner, name):
                     print('Set name', name, owner)
             </code></pre>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/class/descriptor.py" download><i class="material-icons">code</i> descriptor.py</a>
           </section>
           <section>
             <h2>&lt;Code Time.py&gt;</h2>
@@ -1104,6 +1105,30 @@
             <pre><code class="python">
             property(fget=None, fset=None, fdel=None, doc=None) -&gt; property attribute
             </code></pre>
+          </section>
+          <section>
+            <h2>Properties in Action</h2>
+            <pre><code class="python">
+            class Celsius:
+                def __init__(self, temperature = 0):
+                    self._temperature = temperature
+
+                def to_fahrenheit(self):
+                    return (self.temperature * 1.8) + 32
+
+                @property
+                def temperature(self):
+                    print("Getting value")
+                    return self._temperature
+
+                @temperature.setter
+                def temperature(self, value):
+                    if value &lt; -273:
+                        raise ValueError("Temperature below -273 is not possible")
+                    print("Setting value")
+                    self._temperature = value
+            </code></pre>
+            <a href="https://raw.githubusercontent.com/bambil/Python201/master/src/class/properties.py" download><i class="material-icons">code</i> properties.py</a>
           </section>
         </section>
         <section>
