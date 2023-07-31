@@ -1,7 +1,7 @@
 <h1 align="center"> Python 201 </h1>
 
 <p align="center">
-  <img alt="banner" src="./.github/assets/banner.png" height="200px" />
+  <img alt="banner" src="./.github/assets/banner.jpg" height="200px" />
 </p>
 
 **In the memory of our friends who are not among us right now**
