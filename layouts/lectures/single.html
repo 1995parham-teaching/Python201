@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="https://github.com/1995parham-me.png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>{{ .Title }}</title>
+    {{ $style := readFile "node_modules/reveal.js/dist/reveal.css" | resources.FromString "reveal.css" | toCSS | minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    {{ $style := readFile "node_modules/reveal.js/dist/theme/league.css" | resources.FromString "league.css" | toCSS | minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    {{ $style := readFile "node_modules/reveal.js/plugin/highlight/monokai.css" | resources.FromString "monokai.css" | toCSS | minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    {{ $style := resources.Get "scss/lecture.scss" | toCSS | minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-gradient="linear-gradient(#474747, #212121)">
+          <h2>Introduction to Advanced Python</h2>
+          <h1 style="color: #ffea00">{{ .Title }}</h1>
+          <h5>{{ now.Format "Jan 2006" }}</h5>
+          <h5><a href="https://github.com/1995parham">@1995parham</a></h5>
+          <img
+            src="{{ "img/python-logo-inkscape.svg" | relURL }}"
+            alt="python-logo"
+            width="300px"
+          />
+        </section>
+        {{ .Content }}
+      </div>
+    </div>
+    {{ $js := resources.Get "js/index.js" | js.Build (dict "minify" hugo.IsProduction) }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
+    {{ $js := resources.Get "js/toc.ts" | resources.ExecuteAsTemplate (path.Join .File.Dir  "toc.ts")
+      .Params | js.Build (dict "minify" hugo.IsProduction)
+    }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
+    <!-- logos and advertising -->
+    <a href="https://github.com/1995parham-teaching/ie-lecture" target="_blank">
+      <img
+        style="position: absolute; top: 0; right: 0; border: 0;"
+        src="{{ "img/forkme_right_orange.png" | relURL }}"
+        alt="Fork me on GitHub"
+      />
+    </a>
+  </body>
+</html>

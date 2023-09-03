@@ -1,0 +1,1320 @@
+---
+index: 1
+title: Introduction
+topics:
+  - Introduction
+  - Review on Basis
+  - Functions
+  - Class
+  - Kivy or Kiwi?!
+  - Async-Await
+draft: false
+---
+
+<section>
+  <h2>Parham Alvani</h2>
+  <p><i class="material-icons">email</i> parham.alvani@gmail.com</p>
+  <p><a href="https://1995parham.github.io/"><i class="material-icons">home</i> 1995parham.github.io</a></p>
+  <img src="img/1995parham-logo.png" alt="1995parham-logo" width="500px">
+</section>
+<section>
+  <h2>Why advanced python?</h2>
+</section>
+<section>
+  <h2>Zen of Python</h2>
+  <blockquote>
+    Beautiful is better than ugly.<br>
+    Explicit is better than implicit.<br>
+    Simple is better than complex.<br>
+    Complex is better than complicated.<br>
+    Flat is better than nested.<br>
+    Sparse is better than dense.<br>
+    Readability counts.<br>
+    Special cases aren't special enough to break the rules.<br>
+    Although practicality beats purity.<br>
+    Errors should never pass silently.<br>
+    Unless explicitly silenced.<br>
+  </blockquote>
+</section>
+<section>
+  <h2>Zen of Python (cont'd)</h2>
+  <blockquote>
+    In the face of ambiguity, refuse the temptation to guess.<br>
+    There should be one—and preferably only one—obvious way to do it.<br>
+    Although that way may not be obvious at first unless you're Dutch.<br>
+    Now is better than never.<br>
+    Although never is often better than right now.<br>
+  </blockquote>
+</section>
+<section>
+  <h2>Zen of Python (cont'd)</h2>
+  <blockquote>
+    If the implementation is hard to explain, it's a bad idea.<br>
+    If the implementation is easy to explain, it may be a good idea.<br>
+    Namespaces are one honking great idea—let's do more of those!<br>
+  </blockquote>
+</section>
+<section>
+  <section>
+    <h2>Outline</h2>
+  </section>
+  <section>
+    <h2>Python Version</h2>
+    <h1>3.6</h1>
+    <ul>
+      <li>Formatted string literals</li>
+      <li>Underscores in Numeric Literals</li>
+      <li>Syntax for variable annotations</li>
+      <li>Simpler customization of class creation</li>
+      <li>Descriptor Protocol Enhancement</li>
+      <li>asyncio</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Trust in docs.python.org</h2>
+    <a href="https://docs.python.org/3/"><i class="material-icons">book</i> Python Documentation</a>
+  </section>
+  <section>
+    <h2>Python vs Nodejs</h2>
+    <h2>I love them both</h2>
+    <h3><i class="material-icons" style="font-size: 48px; color: red;">favorite</i></h3>
+  </section>
+  <section>
+    <h2>Knowledge is required to understand examples</h2>
+    <ul>
+      <li>HTTP Protocol</li>
+      <li>Networking Stack</li>
+      <li>Basis of algorithms</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Github + Laptop</h2>
+    <h3>==</h3>
+    <h2>You have the <a href="https://github.com/1995parham-teaching/Python201">codes</a></h2>
+  </section>
+</section>
+<section>
+  <div class="toc"></div>
+</section>
+<section>
+  <div class="toc" data-selected="Introduction"></div>
+</section>
+<section>
+  <section>
+    <h2>What is Python!?</h2>
+    <img src="img/python-logo.png" width="200px">
+    <img src="img/python-image.jpg" width="200px">
+  </section>
+  <section>
+    <h2>What is Python!?</h2>
+    <p>
+      Python is a <span class="material-italic">high-level</span>,
+      <span class="material-italic">interpreted</span> and
+      <span class="material-italic">object-oriented</span>
+      <span class="material-bold">scripting language</span>.
+    </p>
+    <p>
+      Python is designed to be highly readable.
+    </p>
+  </section>
+  <section>
+    <h2>Swap</h2>
+    <pre><code class="c">
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    </code></pre>
+    <pre><code class="python">
+    a, b = b, a
+    </code></pre>
+  </section>
+  <section>
+    <h2>Alternative Python Implementations</h2>
+    <ul>
+      <li>Python (nicknamed CPython)</li>
+      <li>IronPython (Python running on .NET)</li>
+      <li>Jython (Python running on the Java Virtual Machine)</li>
+      <li>PyPy (A fast python implementation with a JIT compiler)</li>
+      <li>Stackless Python (Branch of CPython supporting microthreads)</li>
+      <li>MicroPython (Python running on micro controllers)</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Stackless</h2>
+    <p>
+      Stackless Python is an enhanced version of the Python programming language.
+      It allows programmers to reap the benefits of thread-based programming without the performance and complexity problems associated with conventional threads.
+    </p>
+    <ul>
+      <li>Microthreads</li>
+      <li>Channels</li>
+      <li>Scheduling</li>
+      <li>Serialization</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Python Terminology</h2>
+    <h4 style="color: #00b0ff;">PyPi</h4>
+    <p>the Python Package Index</p>
+    <h4 style="color: #ff4081">PyPA</h4>
+    <p>The Python Packaging Authority (PyPA) is a working group that maintains many of the relevant projects in Python packaging</p>
+    <h4 style="color: #ffd740">pip</h4>
+    <p>The PyPA recommended tool for installing Python packages</p>
+  </section>
+  <section>
+    <h2>Python Package Installation</h2>
+    <pre><code class="bash">
+    $ pip3 install flask
+    </code></pre>
+  </section>
+</section>
+<section>
+  <div class="toc" data-selected="Review on Basis"></div>
+</section>
+<section>
+  <pre><code class="python">
+  if __name__ == '__main__':
+      print('hello world')
+  </code></pre>
+  <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/review/hello.py" download><i class="material-icons">code</i> hello.py</a>
+</section>
+<section>
+  <section>
+    <h2>Storing Data, the right way</h2>
+    <ul>
+      <li>List - a mutable list of items</li>
+      <li>Dict - unsorted but a fast map of items</li>
+      <li>Set - like a dict without values</li>
+      <li>Tuple - the immutable and hashable list</li>
+    </ul>
+  </section>
+  <section>
+    <h2>List</h2>
+    <h4>Vector Like Implementation</h4>
+    <table>
+      <tr>
+        <th>Get</th>
+        <th>Set</th>
+        <th>Lenght</th>
+        <th>Insert</th>
+        <th>Remove</th>
+      </tr>
+      <tr>
+        <td>O(1)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+      </tr>
+    </table>
+  </section>
+  <section>
+    <h2>List (cont’d)</h2>
+    <pre><code class="python">
+    items = list(range(10))
+    primes = [2, 3, 5, 7]
+
+    print([item for item in items])
+    print([item for item in items if item not in primes])
+    print([item * 2 for item in items if item not in primes])
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/review/list.py" download><i class="material-icons">code</i> list.py</a>
+  </section>
+  <section>
+    <h2>Dict</h2>
+    <h4><span class="material-italic">__hash__</span>(key)</h4>
+    <table>
+      <tr>
+        <th>Get</th>
+        <th>Set</th>
+        <th>Del</th>
+      </tr>
+      <tr>
+        <td>O(1)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+      </tr>
+    </table>
+    <h5>Do you believe it ?</h5>
+  </section>
+  <section>
+    <h2>Set</h2>
+    <table>
+      <tr>
+        <th>Expression</th>
+        <th>Explanation</th>
+      </tr>
+      <tr>
+        <td><pre><code class="python">spam &amp; eggs</code></pre></td>
+        <td>Every item in both</td>
+      </tr>
+      <tr>
+        <td><pre><code class="python">spam | eggs</code></pre></td>
+        <td>Every item in either or both</td>
+      </tr>
+      <tr>
+        <td><pre><code class="python">spam - eggs</code></pre></td>
+        <td>Every item in the first but not the latter</td>
+      </tr>
+      <tr>
+        <td><pre><code class="python">spam ^ eggs</code></pre></td>
+        <td>Every item in either but not both</td>
+      </tr>
+      <tr>
+        <td><pre><code class="python">spam &lt; eggs</code></pre></td>
+        <td>True if every item in the first is contained in the latter</td>
+      </tr>
+    </table>
+  </section>
+  <section>
+    <h2>Tuple</h2>
+    <p>
+      There are few cases whre a <span class="material-italic">tuple</span> offers some really useful
+      functionalities that a <span class="material-bold">list</span> does not.
+    </p>
+  </section>
+  <section>
+    <h2>Tuple (cont'd)</h2>
+    <pre><code class="python">
+    t1 = 1, 3, 7, 3
+    t2 = (1, 3, 7, 2)
+
+    data = dict()
+    data[t1] = 'me'
+    data[t2] = 'who'
+
+    import pprint
+
+    pprint.pprint(data)
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/review/tuple.py" download><i class="material-icons">code</i> tuple.py</a>
+  </section>
+  <section>
+    <h2>Data Structure is fun</h2>
+    <a href="https://hg.python.org/cpython/file/default/Lib/collections/__init__.py">See Me</a>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Create Person class that can say hello and walk, then create Runner class that inherits from Person.
+    </p>
+  </section>
+  <section>
+    <pre><code class="python">
+    class Person:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+        def say(self):
+            print('%s: Hello' % self.name)
+
+        def walk(self):
+            print('Telgh Telgh')
+
+
+    class Runner(Person):
+        def __init__(self, name, age):
+            super().__init__(name, age)
+
+        def walk(self):
+            print('Lekh Lekh')
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/review/person.py" download><i class="material-icons">code</i> person.py</a>
+  </section>
+  <section>
+    <h2>Lamba</h2>
+    <p>Lambda expressions (sometimes called lambda forms) are used to create <span class="material-bold">anonymous functions</span>.</p>
+    <pre><code class="python">
+    lambda x, y: x * y + 1
+    </code></pre>
+  </section>
+  <section>
+    <h2>So what ?!</h2>
+    <pre><code class="python">
+    import functools
+
+    foo = [1, 2, 3]
+    functools.reduce(lambda x, y: x + y, foo)
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/review/lambda.py" download><i class="material-icons">code</i> lambda.py</a>
+  </section>
+  <section>
+    <h2>Scope in python, The LEGB Rule.</h2>
+    <p><i class="material-icons">extension</i> <span class="material-bold">L</span>ocal</p>
+    <p>
+      Names assigned in any way within a function
+    </p>
+    <p><i class="material-icons">extension</i> <span class="material-italic">E</span>nclosing-function locals</p>
+    <p>
+      Name in the local scope of any and all statically enclosing functions
+    </p>
+  </section>
+  <section>
+    <h2>Scope in python, The LEGB Rule. (cont’d)</h2>
+    <p><i class="material-icons">extension</i> <span class="material-bold">G</span>lobal</p>
+    <p>
+        Names assigned at the top-level of a module file, or by executing a global statement in a def within the file
+    </p>
+    <p><i class="material-icons">extension</i> <span class="material-italic">B</span>uilt-in</p>
+    <p>
+      Names preassigned in the built-in names module
+    </p>
+  </section>
+  <section>
+    <h2>Scope in python, The LEGB Rule. (cont’d)</h2>
+    <pre><code class="python">
+    def f1():
+        a = 1
+        b = []
+
+        def f2():
+            print(a)
+            b.append(1)
+        print(b)
+        f2()
+        print(a)
+        print(b)
+
+    f1()
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/review/scope.py" download><i class="material-icons">code</i> scope.py</a>
+  </section>
+  <section>
+    <h2>Python Packaging</h2>
+    <pre><code class="bash">
+    parent/
+        __init__.py
+        one/
+            __init__.py
+        two/
+            __init__.py
+        three/
+            __init__.py
+    </code></pre>
+  </section>
+  <section>
+    <h2>Python Packaging (cont'd)</h2>
+    <p>
+      Python defines two types of packages,
+      <span class="material-italic">regular packages</span> and <span class="material-bold">namespace packages</span>.
+    </p>
+    <p>Regular packages are traditional packages as they existed in Python 3.2 and earlier.</p>
+  </section>
+  <section>
+    <h2>Python Packaging (cont'd)</h2>
+    <p>
+      A regular package is typically implemented as a directory containing an __init__.py file.
+      When a regular package is imported, this __init__.py file is implicitly executed, and the objects it defines are bound to names in the package’s namespace.
+    </p>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Create calc package for four arithmetic operators (each operator has one file). Then create caculator application based
+      on this package.
+    </p>
+    <a href="https://github.com/1995parham-teaching/Python201/tree/main/src/review" ><i class="material-icons">code</i> calculator</a>
+  </section>
+</section>
+<section>
+  <div class="toc" data-selected="Functions"></div>
+</section>
+<section>
+  <section>
+    <h2>Functions</h2>
+    <pre><code class="python">
+    def function_name(param1, param2):
+        '''
+        I am your function documentation but you can use me
+        in other and maybe bad ways.
+        '''
+        print('You saw me in the past')
+    </code></pre>
+  </section>
+  <section>
+    <h2>Functions in Action</h2>
+    <pre><code class="python">
+    function_name(1, 2)
+    function_name(1, param2=2)
+    function_name(param1=1, param2=2)
+    </code></pre>
+  </section>
+  <section>
+    <p><span class="material-italic">__doc__</span> is useful to provide some documentation</p>
+    <p><span class="material-italic">exec</span> function supports dynamic execution of Python code</p>
+  </section>
+  <section>
+    <h2>Function documentation, bad way</h2>
+    <pre><code class="python">
+    def function_bad():
+        '''print('Hello from the doc')'''
+        pass
+    print(exec(function_bad.__doc__))
+    </code></pre>
+  </section>
+  <section>
+    <h2>I want a function with many many arguments</h2>
+    <p><i style="font-size: 96px;" class="material-icons">question_answer</i></p>
+  </section>
+  <section>
+    <pre><code class="python">
+    import functools
+
+
+    def many_arg_func(list):
+        s = functools.reduce(lambda x, y: x + y, list)
+        return s
+
+    many_arg_func([1, 2, 3, 4])
+    </code></pre>
+    <h2>But I want to call my function normally :\</h2>
+  </section>
+  <section>
+    <h2>*args, **kwargs</h2>
+    <p>The syntax is the * and **. The names *args and **kwargs are only by convention but there's no hard requirement to use them.</p>
+    <p>You would use <span class="material-italic">*args</span> when you're not sure how many arguments might be passed to your function</p>
+    <p>Similarly, <span class="material-bold">**kwargs</span> allows you to handle named arguments that you have not defined in advance</p>
+  </section>
+  <section>
+    <pre><code class="python">
+    def hello(param1, *args, **kwargs):
+        print(param1, args, kwargs)
+
+    hello(1, 2, 3, 4, 5, h=6)
+    </code></pre>
+  </section>
+  <section>
+    <pre><code class="python">
+    import functools
+
+    def many_arg_func(*args):
+        s = functools.reduce(lambda x, y: x + y, list)
+        return s
+
+    many_arg_func([1, 2, 3, 4])
+    </code></pre>
+  </section>
+  <section>
+    <h2>Fibonacci</h2>
+    <p>
+      F(n) = F(n - 1) + F(n - 2)
+    </p>
+    <img src="img/fibonacci.jpg">
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Write recuresive function for calculating Nth term in the Fibonacci sqeuence
+    </p>
+    <p>
+      0: 1, 1: 1, 2: 2, 3: 3, 4: 5, ...
+    </p>
+  </section>
+  <section>
+    <pre><code class="python">
+    def fib(n):
+        if n == 0 or n == 1:
+            return 1
+        return fib(n - 1) + fib(n - 2)
+    print(fib(10)
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/fibonacci.py" download><i class="material-icons">code</i> fibonacci.py</a>
+  </section>
+  <section>
+    <h2>Function call tree</h2>
+    <img src="img/fibonacci-tree.png" height="500px">
+  </section>
+  <section>
+    <h2>Memoization</h2>
+    <p>
+      In computing, memoization or memoisation is an <span class="material-bold">optimization technique</span> used primarily
+      to speed up computer programs by <span class="material-italic">storing the results</span> of expensive function calls
+      and <span class="material-italic">returning the cached result</span> when the same inputs occur again.
+    </p>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Write recuresive function with <span class="material-bold">memoization</span> for calculating Nth term in the Fibonacci sqeuence
+    </p>
+    <p>
+      0: 1, 1: 1, 2: 2, 3: 3, 4: 5, ...
+    </p>
+  </section>
+  <section>
+    <pre><code class="python">
+    memory = {}
+
+    def m_fibonacci(n):
+        if n == 1 or n == 0:
+            return 1
+        if n in memory:
+            return memory[n]
+        memory[n] = m_fibonacci(n - 1) + m_fibonacci(n - 2)
+        return memory[n]
+
+    print(m_fibonacci(10))
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/m-fibonacci.py" download><i class="material-icons">code</i> m-fibonacci.py</a>
+  </section>
+  <section>
+    <h2>Functions are first-level citizens in python</h2>
+    <p>
+      To say that functions are first-class in a certain programming language means that they can be passed around and manipulated
+      similarly to how you would pass around and manipulate other kinds of objects.
+    </p>
+  </section>
+  <section>
+    <pre><code class="python">
+    def a_hello():
+        print("Hi I am function A")
+
+
+    a_hello()
+    print(a_hello)
+    b_hello = a_hello
+    b_hello()
+    1()
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/function-citizen.py" download><i class="material-icons">code</i> function-citizen.py</a>
+  </section>
+  <section>
+    <h2>no need to repeat all arguments every time</h2>
+    <pre><code class="python">
+    def partial(f, *args):
+        param = args
+
+        def _f(*args, **kwargs):
+            return f(*param, *args, **kwargs)
+
+        return _f
+
+
+    def say(name, message):
+        print(f'{message} to {name}')
+
+
+    say('parham', 'hello')
+
+    say_to_parham = partial(say, 'parham')
+    say_to_parham('bye bye')
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/partial.py" download><i class="material-icons">code</i> partial.py</a>
+  </section>
+  <section>
+    <h2>Event Handling</h2>
+    <p>
+      You can pass your callback into library for specific event and then
+      customize its behaviour
+    </p>
+  </section>
+  <section>
+    <pre><code class="python">
+    import paho.mqtt.client as mqtt
+
+
+    # The callback for when the client receives a CONNACK response from the server.
+    def on_connect(client, userdata, flags, rc):
+        print("Connected with result code "+str(rc))
+
+        # Subscribing in on_connect() means that if we lose the connection and
+        # reconnect then subscriptions will be renewed.
+        client.subscribe("$SYS/#")
+
+
+      # The callback for when a PUBLISH message is received from the server.
+      def on_message(client, userdata, msg):
+          print(msg.topic+" "+str(msg.payload))
+
+      client = mqtt.Client()
+      client.on_connect = on_connect
+      client.on_message = on_message
+
+      client.connect("iot.ceit.aut.ac.ir", 58904, 60)
+
+      # Blocking call that processes network traffic, dispatches callbacks and
+      # handles reconnecting.
+      # Other loop*() functions are available that give a threaded interface and a
+      # manual interface.
+      client.loop_forever()
+    </code></pre>
+  </section>
+  <section>
+    <h2>Decorators</h2>
+    <h4>New in Python 2.4</h4>
+    <pre><code class="python">
+    def my_decorator(some_function):
+        def wrapper():
+
+            print("Something is happening before some_function() is called.")
+
+            some_function()
+
+            print("Something is happening after some_function() is called.")
+
+        return wrapper
+
+
+    def just_some_function():
+        print("Wheee!")
+
+
+    just_some_function = my_decorator(just_some_function)
+    just_some_function()
+    </code></pre>
+  </section>
+  <section>
+    <h2>Decorators (cont'd)</h2>
+    <pre><code class="python">
+    def my_decorator(some_function):
+        def wrapper():
+
+            print("Something is happening before some_function() is called.")
+
+            some_function()
+
+            print("Something is happening after some_function() is called.")
+
+        return wrapper
+
+
+    @my_decorator
+    def just_some_function():
+        print("Wheee!")
+
+
+    just_some_function()
+    </code></pre>
+  </section>
+  <section>
+    <h2>Decorators (cont'd)</h2>
+    <p>A Python decorator is a specific change to the Python syntax that allows us to more conveniently alter functions and methods.</p>
+    <p>A decorator is just another function which takes <span class="material-bold">a function</span> and returns one.</p>
+  </section>
+  <section>
+    <h2>Function Wrapping</h2>
+    <pre><code class="python">
+    import functools
+
+    def my_decorator(some_function):
+        @functools.wraps(some_function)
+        def wrapper():
+
+            print("Something is happening before some_function() is called.")
+
+            some_function()
+
+            print("Something is happening after some_function() is called.")
+
+        return wrapper
+
+
+    @my_decorator
+    def just_some_function():
+        print("Wheee!")
+
+
+    just_some_function()
+    </code></pre>
+  </section>
+  <section>
+    <h2>Function Wrapping (cont'd)</h2>
+    <p>
+      Without the use of this decorator factory,
+      <span class="material-bold">the name</span> of the <span class="material-italic">just_some_function</span> function would have been 'wrapper',
+      and <span class="material-bold">the docstring</span> of the original example() would have been lost.
+    </p>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Using flask create simple web server for handling <span class="material-italic">/hello</span> get request.
+    </p>
+  </section>
+  <section>
+    <pre><code class="python">
+    import flask
+
+
+    app = flask.Flask('Hello')
+
+
+    @app.route('/hello')
+    def hello():
+        return '<h1>Hello world</h1>'
+
+
+    app.run()
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/hello-flask.py" download><i class="material-icons">code</i> hello-flask.py</a>
+  </section>
+  <section>
+    <h2>Parameter in decorators</h2>
+    <pre><code class="python">
+    @decorator
+    def function_name():
+        pass
+    </code></pre>
+    <p>
+      <span class="material-italic">decorator</span> is a name for decorator function and will not actually call the function
+    </p>
+  </section>
+  <section>
+    <h2>Parameter in decorators (cont'd)</h2>
+    <h4>How to pass parameters into decorator when we are not caller</h4>
+  </section>
+  <section>
+    <h2>Parameter in decorators (cont'd)</h2>
+    <p>Get parameters and create decorator in place.</p>
+    <pre><code class="python">
+    import functools
+
+
+    def decorator_args(arg1, arg2):
+        def decorator(f):
+            @functools.wraps(f)
+            def wrapper():
+                print(arg1)
+                f()
+                print(arg2)
+            return wrapper
+        return decorator
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/decorator-args.py" download><i class="material-icons">code</i> decorator-args.py</a>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Giving input from user and running appropriate functions for his/her entered commands.
+    </p>
+  </section>
+</section>
+<section>
+  <div class="toc" data-selected="Class"></div>
+</section>
+<section>
+  <section>
+    <h2>Class</h2>
+    <pre><code class="python">
+    class Person:
+        '''
+        Person class is used for representation person
+        '''
+        def say(self):
+            print("Hello")
+    </code></pre>
+  </section>
+  <section>
+    <h2>Multi-Inheritance</h2>
+    <pre><code class="python">
+    class SubClassName(ParentClass1[, ParentClass2]):
+        """
+        Optional class documentation string
+        """
+        # class code
+    </code></pre>
+  </section>
+  <section>
+    <h2>C3 Linearization</h2>
+    <p>
+      The C3 superclass linearization is an algorithm used primarily to obtain the order in which methods should be inherited
+      (the "linearization") in the presence of multiple inheritance, and is often termed Method Resolution Order (MRO).
+    </p>
+  </section>
+  <section>
+    <h2>@staticmethod</h2>
+    <p>A static method does not receive an implicit first argument.</p>
+    <h2>@classmethod</h2>
+    <p>A class method receives the class as implicit first argument, just like an instance method receives the instance.</p>
+  </section>
+  <section>
+    <h2>@classmethod</h2>
+    <pre><code class="python">
+    class C:
+        @classmethod
+        def f(cls, arg1, arg2, ...): ...
+    </code></pre>
+    <h2>@staticmethod</h2>
+    <pre><code class="python">
+    class C:
+        @staticmethod
+        def f(arg1, arg2, ...): ..
+    </code></pre>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      By using <span class="material-italic">@classmethod</span> create inner class database.
+    </p>
+  </section>
+  <section>
+    <h2>Duck Typing</h2>
+    <p>It is a term used in dynamic languages that do not have strong typing.</p>
+    <p>The idea is that you don't need a type in order to invoke an existing method on an object - if a method is defined on it, you can invoke it.</p>
+    <blockquote>If it looks like a duck and quacks like a duck, it's a duck</blockquote>
+  </section>
+  <section>
+    <h2>Boolean</h2>
+    <h4>__bool__</h4>
+    <p>Called to implement truth value testing and the built-in operation <span class="material-italic">bool()</span></p>
+  </section>
+  <section>
+    <h2>Boolean (cont'd)</h2>
+    <pre><code class="python">
+    class IsBool:
+        def __init__(self, age):
+            self.age = age
+
+        def __bool__(self):
+            return self.age &gt; 20
+
+    if is_bool:
+        print("is_bool.age &gt; 20")
+    else:
+        print("is_bool.age &lt;= 20")
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/bool.py" download><i class="material-icons">code</i> bool.py</a>
+  </section>
+  <section>
+    <h2>Wrap</h2>
+    <h2>Extend</h2>
+    <h2>Invent</h2>
+  </section>
+  <section>
+    <h2>@abc.abstractmethod</h2>
+    <h2>@abc.abstractclassmethod</h2>
+    <h2>@abc.abstractstaticmethod</h2>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Create Person class with abstract walk method and say method, then create Runner class that inherits from Person.
+    </p>
+  </section>
+  <section>
+    <h2>Person Abstract Class</h2>
+    <pre><code class="python">
+    import abc
+
+
+    class Person(abc.ABC):
+        def say(self):
+            print('Hello')
+
+        @abc.abstractmethod
+        def walk(self):
+            raise NotImplementedError()
+    </code></pre>
+  </section>
+  <section>
+    <h2>ABC</h2>
+    <p>
+      This module provides the infrastructure for defining abstract base classes (ABCs) in Python
+    </p>
+    <ul>
+      <li>A way to overload isinstance() and issubclass().</li>
+    </ul>
+    <p>
+      <span class="material-italic">class abc.ABC</span><br>
+      An abstract base class can be created by simply deriving from ABC.
+    </p>
+  </section>
+  <section>
+    <h2>Meta-Class</h2>
+    <img src="img/meta-class.jpg" alt="meta-class" width="500px">
+  </section>
+  <section>
+    <h2>Meta-Class (cont'd)</h2>
+    <p>
+      Classes are callable. These objects normally act as factories for new instances of themselves,
+      but variations are possible for class types that override <span class="material-italic">__new__()</span>.
+      The arguments of the call are passed to <span class="material-italic">__new__()</span> and,
+      in the typical case, to <span class="material-italic">__init__()</span> to initialize the new instance.
+    </p>
+  </section>
+  <section>
+    <h2>Meta-Class (cont'd)</h2>
+    <p>
+      Instances of arbitrary classes can be made callable
+      by defining a <span class="material-italic">__call__()</span> method in their class.
+    </p>
+  </section>
+  <section>
+    <h2>Meta-Class (cont'd)</h2>
+    <p>
+      Once the appropriate metaclass has been identified, then the class namespace is prepared.
+      If the metaclass has a <span class="material-italic">__prepare__</span> attribute,
+      it is called as <span class="material-italic">namespace = metaclass.__prepare__(name, bases, **kwds)</span>
+      (where the additional keyword arguments, if any, come from the class definition).
+    </p>
+  </section>
+  <section>
+    <h2>Meta-Class (Python 3.0)</h2>
+    <pre><code class="python">
+    class ParhamClass(type):
+
+        def __new__(cls, name, bases, namespace, **kwargs):
+            print('cls: ', cls)
+            print('name: ', name)
+            print('bases: ', bases)
+            print('namespace: ', namespace)
+            print('kwargs: ', kwargs)
+            result = super().__new__(cls, name, bases, namespace)
+
+            return result
+
+
+    class A(str, when='never', metaclass=ParhamClass):
+        name = 'parham'
+
+        def one(): pass
+
+        def two(): pass
+
+        def three(): pass
+
+        def four(): pass
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/meta-class-1.py" download><i class="material-icons">code</i> meta-class-1.py</a>
+  </section>
+  <section>
+    <h2>Meta-Class (Python 3.6)</h2>
+    <pre><code class="python">
+    class BotFather:
+        bots = []
+
+        @classmethod
+        def __init_subclass__(cls, name, **kwargs):
+            super().__init_subclass__(**kwargs)
+            print("New subclass from BotFather")
+            BotFather.bots.append(cls)
+
+    class HelloBot(BotFather, name='hello'):
+        def __init__(self):
+            print('New instance from HelloBot')
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/meta-class-2.py" download><i class="material-icons">code</i> meta-class-2.py</a>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Let's create plugin system, write parent class which holds a collection of loaded plugin.
+    </p>
+  </section>
+  <section>
+    <h2>Learn class customization in deep</h2>
+    <a href="https://docs.python.org/3/reference/datamodel.html">See Me</a>
+  </section>
+  <section>
+    <h2>What are descriptors?</h2>
+    <p>Descriptors were introduced to Python way back in version 2.2.</p>
+    <p>They provide the developer with the ability to add <span class="material-bold">managed attributes</span> to objects.</p>
+  </section>
+  <section>
+    <h2>The Descriptor Protocol</h2>
+    <p>If any of these methods are defined for an object, it is said to be a descriptor.</p>
+    <ul>
+      <li><span class="material-italic">__set__</span></li>
+      <li><span class="material-italic">__get__</span></li>
+      <li><span class="material-italic">__del__</span></li>
+    </ul>
+  </section>
+  <section>
+    <h2>__get__(self, instance, owner)</h2>
+    <p>
+      Called to get the attribute of the owner class (class attribute access) or of an instance of that class (instance attribute access).
+      owner is always the owner class, while instance is the instance that the attribute was accessed through, or None when the attribute is
+      accessed through the owner. This method should return the (computed) attribute value or raise an AttributeError exception.
+    </p>
+  </section>
+  <section>
+    <h2>__set__(self, instance, value)</h2>
+    <p>
+      Called to set the attribute on an instance instance of the owner class to a new value, value.
+    </p>
+  </section>
+  <section>
+    <h2>__del__(self, instnace)</h2>
+    <p>
+      Called to delete the attribute on an instance instance of the owner class.
+    </p>
+  </section>
+  <section>
+    <h2>__set_name__(self, owner, name)</h2>
+    <h5>New in version 3.6.</h5>
+    <p>
+      Called at the time the owning class owner is created. The descriptor has been assigned to name.
+    </p>
+  </section>
+  <section>
+    <pre><code class="python">
+    class RevealAccess:
+        '''
+        A data descriptor that sets and returns values
+        normally and prints a message logging their access.
+        '''
+
+        def __init__(self, initval=None, name='var'):
+            self.val = initval
+            self.name = name
+
+        def __get__(self, instance, owner):
+            print('Retrieving', self.name, instance, owner)
+            return self.val
+
+        def __set__(self, instance, val):
+            print('Updating', self.name, instance, val)
+            self.val = val
+
+        def __set_name__(self, owner, name):
+            print('Set name', name, owner)
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/descriptor.py" download><i class="material-icons">code</i> descriptor.py</a>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Let's see <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> Object-Relational Mapping (ORM)
+    </p>
+  </section>
+  <section>
+    <h2>Properties</h2>
+    <p>
+      Calling <span class="material-italic">property()</span> is a succinct way of building a data descriptor
+      that triggers function calls upon access to an attribute.
+    </p>
+    <pre><code class="python">
+    property(fget=None, fset=None, fdel=None, doc=None) -&gt; property attribute
+    </code></pre>
+  </section>
+  <section>
+    <h2>Properties in Action</h2>
+    <pre><code class="python">
+    class Celsius:
+        def __init__(self, temperature = 0):
+            self._temperature = temperature
+
+        def to_fahrenheit(self):
+            return (self.temperature * 1.8) + 32
+
+        @property
+        def temperature(self):
+            print("Getting value")
+            return self._temperature
+
+        @temperature.setter
+        def temperature(self, value):
+            if value &lt; -273:
+                raise ValueError("Temperature below -273 is not possible")
+            print("Setting value")
+            self._temperature = value
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/properties.py" download><i class="material-icons">code</i> properties.py</a>
+  </section>
+</section>
+<section>
+  <div class="toc" data-selected="Kivy or Kiwi ?!"></div>
+</section>
+<section>
+  <section>
+    <h2>Kivy or Kiwi</h2>
+    <img src="img/kiwi.jpg" width="250px">
+    <img src="img/kivy.png" width="250px">
+  </section>
+  <section>
+    <h4>
+      Open source Python library for rapid development of applications
+      that make use of innovative user interfaces, such as multi-touch apps.
+    </h4>
+    <h5>Do you know JavaFX ?</h5>
+  </section>
+  <section>
+    <h2>Kivy Installation</h2>
+    <ul>
+      <li><a href="https://kivy.org/docs/installation/installation-osx.html">OSx</a></li>
+      <li><a href="https://kivy.org/docs/installation/installation-linux.html">Linux</a></li>
+      <li><a href="https://kivy.org/docs/installation/installation-windows.html">Windows</a></li>
+    </li>
+  </section>
+  <section>
+    <h2>Hello Kivy</h2>
+    <pre><code class="python">
+    from kivy.app import App
+    from kivy.uix.button import Button
+
+    class TestApp(App):
+        def build(self):
+            return Button(text='Hello World')
+
+    TestApp().run()
+    </code></pre>
+  </section>
+  <section>
+    <h2>KV Design Language</h2>
+    <p>
+      Kivy provides a design language specifically geared towards easy and scalable GUI Design.
+      The language makes it simple to separate the interface design from the application logic,
+      adhering to the <span class="material-italic">separation of concerns principle</span>.
+    </p>
+  </section>
+  <section>
+    <h2>KV Design Language (cont'd)</h2>
+    <p>There are two ways to load Kv code into your application:</p>
+    <ul>
+      <li>By name convention</li>
+      <pre><code class="python" data-trim data-noescape>
+      MyApp -&gt; my.kv
+      </code></pre>
+      <li>Builder</li>
+      <pre><code class="python" data-trim data-noescape>
+      Builder.load_file('path/to/file.kv')
+      </code></pre>
+    </ul>
+  </section>
+  <section>
+    <h2>Events</h2>
+    <ul>
+      <li>Clock Events</li>
+      <li>Input Events</li>
+      <li>Class Events</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Layouts</h2>
+    <p>
+      Layouts are containers used to arrange widgets in a particular manner.
+    </p>
+    <ul>
+      <li>Anchor Layout: Widgets can be anchored to the <span class="material-bold">top</span>, <span class="material-bold">bottom</span>, <span class="material-bold">left<span>, <span class="material-bold">right</span> or <span class="material-bold">center</span>.</li>
+      <li>Box Layout: Widgets are arranged sequentially, in either a <span class="material-bold">vertical</span> or a <span class="material-bold">horizontal</span> orientation.</li>
+      <li>GridLayout: Widgets are arranged in a grid defined by the rows and cols properties.</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <div class="toc" data-selected="Async-Await"></div>
+</section>
+<section>
+  <section>
+    <h2>Threading</h2>
+    <p>
+      In computer science, a thread of execution is the smallest sequence of programmed instructions that can be managed independently
+      by a scheduler, which is typically a part of the operating system.
+    </p>
+  </section>
+  <section>
+    <h2>Thread</h2>
+    <p>
+      The <span class="material-bold">Thread</span> class represents an activity that is run in a separate thread of control.
+    </p>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+    Flask in single thread and multi-thread modes
+    </p>
+  </section>
+  <section>
+    <h2>Multi-Threading Flask</h2>
+    <pre><code class="python">
+    app.run(threaded=True)
+    </code></pre>
+  </section>
+  <section>
+    <h2>Threading in action</h2>
+    <pre><code class="python">
+    import threading
+
+
+    def run():
+        print('some works')
+
+
+    threading.Thread(target=run).start()
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/async-await/thread.py" download><i class="material-icons">code</i> thread.py</a>
+  </section>
+  <section>
+    <h2>Thread.join(timeout=None)</h2>
+    <p>
+      Wait until the thread terminates.
+      This blocks the calling thread until the thread whose join() method is called terminates
+      – either normally or through an unhandled exception – or until the optional timeout occurs.
+    </p>
+  </section>
+  <section>
+    <h2>Lock</h2>
+    <p>
+      A primitive lock is a synchronization primitive that is not owned by a particular thread when locked.
+    </p>
+    <p>
+      Locks also support the <span class="material-bold">context management protocol</span>.
+    </p>
+    <pre><code class="python">
+    with lck:
+        # some awesome synchronized works
+    </code></pre>
+  </section>
+  <section>
+    <h2>Generators</h2>
+    <p>
+      Generators functions allow you to declare a function that behaves like an iterator, i.e. it can be used in a for loop.
+    </p>
+  </section>
+  <section>
+    <pre><code class="python">
+    def firstn(n):
+        sum = 0
+        while num &lt; n:
+            yield num
+            num += 1
+
+
+    for i in firstn(10):
+        print(i)
+    </code></pre>
+    <a href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/async-await/generators.py" download><i class="material-icons">code</i> generators.py</a>
+  </section>
+  <section>
+    <h2>&lt;Code Time.py&gt;</h2>
+    <p>
+      Let's write fibonacci with generators.
+    </p>
+  </section>
+  <section>
+    <h2>Async-Await</h2>
+    <p>
+      The newer and cleaner syntax is to use the <span class="material-bold">async/await</span> keywords.
+      Introduced in Python 3.5, async is used to declare a function as a coroutine.
+      It can be applied to the function by putting it at the front of the definition.
+    </p>
+  </section>
+  <section>
+    <h2>Async-Await (cont'd)</h2>
+    <pre><code class="python">
+    async def ping_server():
+        # ping code here
+
+    async def ping_local():
+        return await ping_server('127.0.0.1')
+    </code></pre>
+  </section>
+  <section>
+    <h2>Running the event loop</h2>
+    <p>
+      None of the coroutine stuff will matter (or work) if you don't know how to start and run an event loop. 
+    </p>
+    <p>
+      The event loop is the central point of execution for asynchronous functions
+    </p>
+  </section>
+  <section>
+    <h2>Running the event loop (cont'd)</h2>
+    <pre><code class="python">
+    loop = asyncio.get_event_loop()  
+    loop.run_until_complete(speak_async())  
+    loop.close()  
+    </code></pre>
+  </section>
+</section>

@@ -1,0 +1,14 @@
+languageCode = 'en-us'
+title = 'Python Lecture'
+staticDir = ['fonts']
+enableGitInfo = true
+
+[module]
+
+[[module.mounts]]
+source = "node_modules/reveal.js/dist/theme/fonts"
+target = "static/fonts"
+
+[[module.mounts]]
+source = 'static'
+target = 'static'
