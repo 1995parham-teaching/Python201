@@ -10,5 +10,9 @@ source = "node_modules/reveal.js/dist/theme/fonts"
 target = "static/fonts"
 
 [[module.mounts]]
+source = "node_modules/material-icons/iconfont"
+target = "static/material-icons/iconfont"
+
+[[module.mounts]]
 source = 'static'
 target = 'static'
