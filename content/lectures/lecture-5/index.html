@@ -1,0 +1,143 @@
+---
+index: 5
+title: Async-Await
+topics:
+  - Async-Await
+draft: false
+---
+
+<section>
+  <div class="toc" data-selected="0"></div>
+</section>
+<section>
+  <h2>Threading</h2>
+  <p>
+    In computer science, a thread of execution is the smallest sequence of
+    programmed instructions that can be managed independently by a scheduler,
+    which is typically a part of the operating system.
+  </p>
+</section>
+<section>
+  <h2>Thread</h2>
+  <p>
+    The <span class="material-bold">Thread</span> class represents an activity
+    that is run in a separate thread of control.
+  </p>
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>Flask in single thread and multi-thread modes</p>
+</section>
+<section>
+  <h2>Multi-Threading Flask</h2>
+  <pre><code class="python">
+    app.run(threaded=True)
+    </code></pre>
+</section>
+<section>
+  <h2>Threading in action</h2>
+  <pre><code class="python">
+    import threading
+
+
+    def run():
+        print('some works')
+
+
+    threading.Thread(target=run).start()
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/async-await/thread.py"
+    download
+    ><i class="material-icons">code</i> thread.py</a
+  >
+</section>
+<section>
+  <h2>Thread.join(timeout=None)</h2>
+  <p>
+    Wait until the thread terminates. This blocks the calling thread until the
+    thread whose join() method is called terminates – either normally or through
+    an unhandled exception – or until the optional timeout occurs.
+  </p>
+</section>
+<section>
+  <h2>Lock</h2>
+  <p>
+    A primitive lock is a synchronization primitive that is not owned by a
+    particular thread when locked.
+  </p>
+  <p>
+    Locks also support the
+    <span class="material-bold">context management protocol</span>.
+  </p>
+  <pre><code class="python">
+    with lck:
+        # some awesome synchronized works
+    </code></pre>
+</section>
+<section>
+  <h2>Generators</h2>
+  <p>
+    Generators functions allow you to declare a function that behaves like an
+    iterator, i.e. it can be used in a for loop.
+  </p>
+</section>
+<section>
+  <pre><code class="python">
+    def firstn(n):
+        sum = 0
+        while num &lt; n:
+            yield num
+            num += 1
+
+
+    for i in firstn(10):
+        print(i)
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/async-await/generators.py"
+    download
+    ><i class="material-icons">code</i> generators.py</a
+  >
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>Let's write fibonacci with generators.</p>
+</section>
+<section>
+  <h2>Async-Await</h2>
+  <p>
+    The newer and cleaner syntax is to use the
+    <span class="material-bold">async/await</span> keywords. Introduced in
+    Python 3.5, async is used to declare a function as a coroutine. It can be
+    applied to the function by putting it at the front of the definition.
+  </p>
+</section>
+<section>
+  <h2>Async-Await (cont'd)</h2>
+  <pre><code class="python">
+    async def ping_server():
+        # ping code here
+
+    async def ping_local():
+        return await ping_server('127.0.0.1')
+    </code></pre>
+</section>
+<section>
+  <h2>Running the event loop</h2>
+  <p>
+    None of the coroutine stuff will matter (or work) if you don't know how to
+    start and run an event loop.
+  </p>
+  <p>
+    The event loop is the central point of execution for asynchronous functions
+  </p>
+</section>
+<section>
+  <h2>Running the event loop (cont'd)</h2>
+  <pre><code class="python">
+    loop = asyncio.get_event_loop() 
+    loop.run_until_complete(speak_async())
+    loop.close()
+    </code></pre>
+</section>

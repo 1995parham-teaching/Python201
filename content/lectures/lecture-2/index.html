@@ -1,0 +1,432 @@
+---
+index: 2
+title: Functions
+topics:
+  - Functions
+draft: false
+---
+
+<section>
+  <div class="toc" data-selected="0"></div>
+</section>
+<section>
+  <h2>Functions</h2>
+  <pre><code class="python">
+    def function_name(param1, param2):
+        '''
+        I am your function documentation but you can use me
+        in other and maybe bad ways.
+        '''
+        print('You saw me in the past')
+    </code></pre>
+</section>
+<section>
+  <h2>Functions in Action</h2>
+  <pre><code class="python">
+    function_name(1, 2)
+    function_name(1, param2=2)
+    function_name(param1=1, param2=2)
+    </code></pre>
+</section>
+<section>
+  <p>
+    <span class="material-italic">__doc__</span> is useful to provide some
+    documentation
+  </p>
+  <p>
+    <span class="material-italic">exec</span> function supports dynamic
+    execution of Python code
+  </p>
+</section>
+<section>
+  <h2>Function documentation, bad way</h2>
+  <pre><code class="python">
+    def function_bad():
+        '''print('Hello from the doc')'''
+        pass
+    print(exec(function_bad.__doc__))
+    </code></pre>
+</section>
+<section>
+  <h2>I want a function with many many arguments</h2>
+  <p>
+    <i style="font-size: 96px;" class="material-icons">question_answer</i>
+  </p>
+</section>
+<section>
+  <pre><code class="python">
+    import functools
+
+
+    def many_arg_func(list):
+        s = functools.reduce(lambda x, y: x + y, list)
+        return s
+
+    many_arg_func([1, 2, 3, 4])
+    </code></pre>
+  <h2>But I want to call my function normally :\</h2>
+</section>
+<section>
+  <h2>*args, **kwargs</h2>
+  <p>
+    The syntax is the * and **. The names *args and **kwargs are only by
+    convention but there's no hard requirement to use them.
+  </p>
+  <p>
+    You would use <span class="material-italic">*args</span> when you're not
+    sure how many arguments might be passed to your function
+  </p>
+  <p>
+    Similarly, <span class="material-bold">**kwargs</span> allows you to handle
+    named arguments that you have not defined in advance
+  </p>
+</section>
+<section>
+  <pre><code class="python">
+    def hello(param1, *args, **kwargs):
+        print(param1, args, kwargs)
+
+    hello(1, 2, 3, 4, 5, h=6)
+    </code></pre>
+</section>
+<section>
+  <pre><code class="python">
+    import functools
+
+    def many_arg_func(*args):
+        s = functools.reduce(lambda x, y: x + y, list)
+        return s
+
+    many_arg_func([1, 2, 3, 4])
+    </code></pre>
+</section>
+<section>
+  <h2>Fibonacci</h2>
+  <p>F(n) = F(n - 1) + F(n - 2)</p>
+  <img src="img/fibonacci.jpg" />
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>
+    Write recuresive function for calculating Nth term in the Fibonacci sqeuence
+  </p>
+  <p>0: 1, 1: 1, 2: 2, 3: 3, 4: 5, ...</p>
+</section>
+<section>
+  <pre><code class="python">
+    def fib(n):
+        if n == 0 or n == 1:
+            return 1
+        return fib(n - 1) + fib(n - 2)
+    print(fib(10)
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/fibonacci.py"
+    download
+    ><i class="material-icons">code</i> fibonacci.py</a
+  >
+</section>
+<section>
+  <h2>Function call tree</h2>
+  <img src="img/fibonacci-tree.png" height="500px" />
+</section>
+<section>
+  <h2>Memoization</h2>
+  <p>
+    In computing, memoization or memoisation is an
+    <span class="material-bold">optimization technique</span> used primarily to
+    speed up computer programs by
+    <span class="material-italic">storing the results</span> of expensive
+    function calls and
+    <span class="material-italic">returning the cached result</span> when the
+    same inputs occur again.
+  </p>
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>
+    Write recuresive function with
+    <span class="material-bold">memoization</span> for calculating Nth term in
+    the Fibonacci sqeuence
+  </p>
+  <p>0: 1, 1: 1, 2: 2, 3: 3, 4: 5, ...</p>
+</section>
+<section>
+  <pre><code class="python">
+    memory = {}
+
+    def m_fibonacci(n):
+        if n == 1 or n == 0:
+            return 1
+        if n in memory:
+            return memory[n]
+        memory[n] = m_fibonacci(n - 1) + m_fibonacci(n - 2)
+        return memory[n]
+
+    print(m_fibonacci(10))
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/m-fibonacci.py"
+    download
+    ><i class="material-icons">code</i> m-fibonacci.py</a
+  >
+</section>
+<section>
+  <h2>Functions are first-level citizens in python</h2>
+  <p>
+    To say that functions are first-class in a certain programming language
+    means that they can be passed around and manipulated similarly to how you
+    would pass around and manipulate other kinds of objects.
+  </p>
+</section>
+<section>
+  <pre><code class="python">
+    def a_hello():
+        print("Hi I am function A")
+
+
+    a_hello()
+    print(a_hello)
+    b_hello = a_hello
+    b_hello()
+    1()
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/function-citizen.py"
+    download
+    ><i class="material-icons">code</i> function-citizen.py</a
+  >
+</section>
+<section>
+  <h2>no need to repeat all arguments every time</h2>
+  <pre><code class="python">
+    def partial(f, *args):
+        param = args
+
+        def _f(*args, **kwargs):
+            return f(*param, *args, **kwargs)
+
+        return _f
+
+
+    def say(name, message):
+        print(f'{message} to {name}')
+
+
+    say('parham', 'hello')
+
+    say_to_parham = partial(say, 'parham')
+    say_to_parham('bye bye')
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/partial.py"
+    download
+    ><i class="material-icons">code</i> partial.py</a
+  >
+</section>
+<section>
+  <h2>Event Handling</h2>
+  <p>
+    You can pass your callback into library for specific event and then
+    customize its behaviour
+  </p>
+</section>
+<section>
+  <pre><code class="python">
+    import paho.mqtt.client as mqtt
+
+
+    # The callback for when the client receives a CONNACK response from the server.
+    def on_connect(client, userdata, flags, rc):
+        print("Connected with result code "+str(rc))
+
+        # Subscribing in on_connect() means that if we lose the connection and
+        # reconnect then subscriptions will be renewed.
+        client.subscribe("$SYS/#")
+
+
+      # The callback for when a PUBLISH message is received from the server.
+      def on_message(client, userdata, msg):
+          print(msg.topic+" "+str(msg.payload))
+
+      client = mqtt.Client()
+      client.on_connect = on_connect
+      client.on_message = on_message
+
+      client.connect("iot.ceit.aut.ac.ir", 58904, 60)
+
+      # Blocking call that processes network traffic, dispatches callbacks and
+      # handles reconnecting.
+      # Other loop*() functions are available that give a threaded interface and a
+      # manual interface.
+      client.loop_forever()
+    </code></pre>
+</section>
+<section>
+  <h2>Decorators</h2>
+  <h4>New in Python 2.4</h4>
+  <pre><code class="python">
+    def my_decorator(some_function):
+        def wrapper():
+
+            print("Something is happening before some_function() is called.")
+
+            some_function()
+
+            print("Something is happening after some_function() is called.")
+
+        return wrapper
+
+
+    def just_some_function():
+        print("Wheee!")
+
+
+    just_some_function = my_decorator(just_some_function)
+    just_some_function()
+    </code></pre>
+</section>
+<section>
+  <h2>Decorators (cont'd)</h2>
+  <pre><code class="python">
+    def my_decorator(some_function):
+        def wrapper():
+
+            print("Something is happening before some_function() is called.")
+
+            some_function()
+
+            print("Something is happening after some_function() is called.")
+
+        return wrapper
+
+
+    @my_decorator
+    def just_some_function():
+        print("Wheee!")
+
+
+    just_some_function()
+    </code></pre>
+</section>
+<section>
+  <h2>Decorators (cont'd)</h2>
+  <p>
+    A Python decorator is a specific change to the Python syntax that allows us
+    to more conveniently alter functions and methods.
+  </p>
+  <p>
+    A decorator is just another function which takes
+    <span class="material-bold">a function</span> and returns one.
+  </p>
+</section>
+<section>
+  <h2>Function Wrapping</h2>
+  <pre><code class="python">
+    import functools
+
+    def my_decorator(some_function):
+        @functools.wraps(some_function)
+        def wrapper():
+
+            print("Something is happening before some_function() is called.")
+
+            some_function()
+
+            print("Something is happening after some_function() is called.")
+
+        return wrapper
+
+
+    @my_decorator
+    def just_some_function():
+        print("Wheee!")
+
+
+    just_some_function()
+    </code></pre>
+</section>
+<section>
+  <h2>Function Wrapping (cont'd)</h2>
+  <p>
+    Without the use of this decorator factory,
+    <span class="material-bold">the name</span> of the
+    <span class="material-italic">just_some_function</span> function would have
+    been 'wrapper', and <span class="material-bold">the docstring</span> of the
+    original example() would have been lost.
+  </p>
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>
+    Using flask create simple web server for handling
+    <span class="material-italic">/hello</span> get request.
+  </p>
+</section>
+<section>
+  <pre><code class="python">
+    import flask
+
+
+    app = flask.Flask('Hello')
+
+
+    @app.route('/hello')
+    def hello():
+        return '<h1>Hello world</h1>'
+
+
+    app.run()
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/hello-flask.py"
+    download
+    ><i class="material-icons">code</i> hello-flask.py</a
+  >
+</section>
+<section>
+  <h2>Parameter in decorators</h2>
+  <pre><code class="python">
+    @decorator
+    def function_name():
+        pass
+    </code></pre>
+  <p>
+    <span class="material-italic">decorator</span> is a name for decorator
+    function and will not actually call the function
+  </p>
+</section>
+<section>
+  <h2>Parameter in decorators (cont'd)</h2>
+  <h4>How to pass parameters into decorator when we are not caller</h4>
+</section>
+<section>
+  <h2>Parameter in decorators (cont'd)</h2>
+  <p>Get parameters and create decorator in place.</p>
+  <pre><code class="python">
+    import functools
+
+
+    def decorator_args(arg1, arg2):
+        def decorator(f):
+            @functools.wraps(f)
+            def wrapper():
+                print(arg1)
+                f()
+                print(arg2)
+            return wrapper
+        return decorator
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/function/decorator-args.py"
+    download
+    ><i class="material-icons">code</i> decorator-args.py</a
+  >
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>
+    Giving input from user and running appropriate functions for his/her entered
+    commands.
+  </p>
+</section>

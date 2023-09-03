@@ -1,0 +1,108 @@
+---
+index: 4
+title: Kivy or Kiwi?!
+topics:
+  - Kivy or Kiwi?!
+draft: false
+---
+
+<section>
+  <div class="toc" data-selected="Kivy or Kiwi ?!"></div>
+</section>
+<section>
+  <h2>Kivy or Kiwi</h2>
+  <img src="img/kiwi.jpg" width="250px" />
+  <img src="img/kivy.png" width="250px" />
+</section>
+<section>
+  <h4>
+    Open source Python library for rapid development of applications that make
+    use of innovative user interfaces, such as multi-touch apps.
+  </h4>
+  <h5>Do you know JavaFX?</h5>
+</section>
+<section>
+  <h2>Kivy Installation</h2>
+  <ul>
+    <li>
+      <a href="https://kivy.org/docs/installation/installation-osx.html">OSx</a>
+    </li>
+    <li>
+      <a href="https://kivy.org/docs/installation/installation-linux.html"
+        >Linux</a
+      >
+    </li>
+    <li>
+      <a href="https://kivy.org/docs/installation/installation-windows.html"
+        >Windows</a
+      >
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>Hello Kivy</h2>
+  <pre><code class="python">
+  from kivy.app import App
+  from kivy.uix.button import Button
+
+  class TestApp(App):
+      def build(self):
+          return Button(text='Hello World')
+
+  TestApp().run()
+  </code></pre>
+</section>
+<section>
+  <h2>KV Design Language</h2>
+  <p>
+    Kivy provides a design language specifically geared towards easy and
+    scalable GUI Design. The language makes it simple to separate the interface
+    design from the application logic, adhering to the
+    <em class="hl-material">separation of concerns principle</em>.
+  </p>
+</section>
+<section>
+  <h2>KV Design Language (cont'd)</h2>
+  <p>There are two ways to load Kv code into your application:</p>
+  <ul>
+    <li>By name convention</li>
+    <pre><code class="python" data-trim data-noescape>
+    MyApp -&gt; my.kv
+    </code></pre>
+    <li>Builder</li>
+    <pre><code class="python" data-trim data-noescape>
+    Builder.load_file('path/to/file.kv')
+    </code></pre>
+  </ul>
+</section>
+<section>
+  <h2>Events</h2>
+  <ul>
+    <li>Clock Events</li>
+    <li>Input Events</li>
+    <li>Class Events</li>
+  </ul>
+</section>
+<section>
+  <h2>Layouts</h2>
+  <p>Layouts are containers used to arrange widgets in a particular manner.</p>
+  <ul>
+    <li>
+      Anchor Layout: Widgets can be anchored to the
+      <strong class="hl-material">top</strong>,
+      <strong class="hl-material">bottom</strong>,
+      <strong class="hl-material">left</strong>,
+      <strong class="hl-material">right</strong> or
+      <strong class="hl-material">center</strong>.
+    </li>
+    <li>
+      Box Layout: Widgets are arranged sequentially, in either a
+      <strong class="hl-material">vertical</strong> or a
+      <strong class="hl-material">horizontal</strong> orientation.
+    </li>
+    <li>
+      GridLayout: Widgets are arranged in a grid defined by the rows and cols
+      properties.
+    </li>
+  </ul>
+</section>

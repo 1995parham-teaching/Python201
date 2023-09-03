@@ -1,0 +1,386 @@
+---
+index: 3
+title: Class
+topics:
+  - Class
+draft: false
+---
+
+<section>
+  <div class="toc" data-selected="0"></div>
+</section>
+<section>
+  <h2>Class</h2>
+  <pre><code class="python">
+    class Person:
+        '''
+        Person class is used for representation person
+        '''
+        def say(self):
+            print("Hello")
+    </code></pre>
+</section>
+<section>
+  <h2>Multi-Inheritance</h2>
+  <pre><code class="python">
+    class SubClassName(ParentClass1[, ParentClass2]):
+        """
+        Optional class documentation string
+        """
+        # class code
+    </code></pre>
+</section>
+<section>
+  <h2>C3 Linearization</h2>
+  <p>
+    The C3 superclass linearization is an algorithm used primarily to obtain the
+    order in which methods should be inherited (the "linearization") in the
+    presence of multiple inheritance, and is often termed Method Resolution
+    Order (MRO).
+  </p>
+</section>
+<section>
+  <h2>@staticmethod</h2>
+  <p>A static method does not receive an implicit first argument.</p>
+  <h2>@classmethod</h2>
+  <p>
+    A class method receives the class as implicit first argument, just like an
+    instance method receives the instance.
+  </p>
+</section>
+<section>
+  <h2>@classmethod</h2>
+  <pre><code class="python">
+    class C:
+        @classmethod
+        def f(cls, arg1, arg2, ...): ...
+    </code></pre>
+  <h2>@staticmethod</h2>
+  <pre><code class="python">
+    class C:
+        @staticmethod
+        def f(arg1, arg2, ...): ..
+    </code></pre>
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>
+    By using <span class="material-italic">@classmethod</span> create inner
+    class database.
+  </p>
+</section>
+<section>
+  <h2>Duck Typing</h2>
+  <p>It is a term used in dynamic languages that do not have strong typing.</p>
+  <p>
+    The idea is that you don't need a type in order to invoke an existing method
+    on an object - if a method is defined on it, you can invoke it.
+  </p>
+  <blockquote>
+    If it looks like a duck and quacks like a duck, it's a duck
+  </blockquote>
+</section>
+<section>
+  <h2>Boolean</h2>
+  <h4>__bool__</h4>
+  <p>
+    Called to implement truth value testing and the built-in operation
+    <span class="material-italic">bool()</span>
+  </p>
+</section>
+<section>
+  <h2>Boolean (cont'd)</h2>
+  <pre><code class="python">
+    class IsBool:
+        def __init__(self, age):
+            self.age = age
+
+        def __bool__(self):
+            return self.age &gt; 20
+
+    if is_bool:
+        print("is_bool.age &gt; 20")
+    else:
+        print("is_bool.age &lt;= 20")
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/bool.py"
+    download
+    ><i class="material-icons">code</i> bool.py</a
+  >
+</section>
+<section>
+  <h2>Wrap</h2>
+  <h2>Extend</h2>
+  <h2>Invent</h2>
+</section>
+<section>
+  <h2>@abc.abstractmethod</h2>
+  <h2>@abc.abstractclassmethod</h2>
+  <h2>@abc.abstractstaticmethod</h2>
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>
+    Create Person class with abstract walk method and say method, then create
+    Runner class that inherits from Person.
+  </p>
+</section>
+<section>
+  <h2>Person Abstract Class</h2>
+  <pre><code class="python">
+    import abc
+
+
+    class Person(abc.ABC):
+        def say(self):
+            print('Hello')
+
+        @abc.abstractmethod
+        def walk(self):
+            raise NotImplementedError()
+    </code></pre>
+</section>
+<section>
+  <h2>ABC</h2>
+  <p>
+    This module provides the infrastructure for defining abstract base classes
+    (ABCs) in Python
+  </p>
+  <ul>
+    <li>A way to overload isinstance() and issubclass().</li>
+  </ul>
+  <p>
+    <span class="material-italic">class abc.ABC</span><br />
+    An abstract base class can be created by simply deriving from ABC.
+  </p>
+</section>
+<section>
+  <h2>Meta-Class</h2>
+  <img src="img/meta-class.jpg" alt="meta-class" width="500px" />
+</section>
+<section>
+  <h2>Meta-Class (cont'd)</h2>
+  <p>
+    Classes are callable. These objects normally act as factories for new
+    instances of themselves, but variations are possible for class types that
+    override <span class="material-italic">__new__()</span>. The arguments of
+    the call are passed to <span class="material-italic">__new__()</span> and,
+    in the typical case, to <span class="material-italic">__init__()</span> to
+    initialize the new instance.
+  </p>
+</section>
+<section>
+  <h2>Meta-Class (cont'd)</h2>
+  <p>
+    Instances of arbitrary classes can be made callable by defining a
+    <span class="material-italic">__call__()</span> method in their class.
+  </p>
+</section>
+<section>
+  <h2>Meta-Class (cont'd)</h2>
+  <p>
+    Once the appropriate metaclass has been identified, then the class namespace
+    is prepared. If the metaclass has a
+    <span class="material-italic">__prepare__</span> attribute, it is called as
+    <span class="material-italic"
+      >namespace = metaclass.__prepare__(name, bases, **kwds)</span
+    >
+    (where the additional keyword arguments, if any, come from the class
+    definition).
+  </p>
+</section>
+<section>
+  <h2>Meta-Class (Python 3.0)</h2>
+  <pre><code class="python">
+    class ParhamClass(type):
+
+        def __new__(cls, name, bases, namespace, **kwargs):
+            print('cls: ', cls)
+            print('name: ', name)
+            print('bases: ', bases)
+            print('namespace: ', namespace)
+            print('kwargs: ', kwargs)
+            result = super().__new__(cls, name, bases, namespace)
+
+            return result
+
+
+    class A(str, when='never', metaclass=ParhamClass):
+        name = 'parham'
+
+        def one(): pass
+
+        def two(): pass
+
+        def three(): pass
+
+        def four(): pass
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/meta-class-1.py"
+    download
+    ><i class="material-icons">code</i> meta-class-1.py</a
+  >
+</section>
+<section>
+  <h2>Meta-Class (Python 3.6)</h2>
+  <pre><code class="python">
+    class BotFather:
+        bots = []
+
+        @classmethod
+        def __init_subclass__(cls, name, **kwargs):
+            super().__init_subclass__(**kwargs)
+            print("New subclass from BotFather")
+            BotFather.bots.append(cls)
+
+    class HelloBot(BotFather, name='hello'):
+        def __init__(self):
+            print('New instance from HelloBot')
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/meta-class-2.py"
+    download
+    ><i class="material-icons">code</i> meta-class-2.py</a
+  >
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>
+    Let's create plugin system, write parent class which holds a collection of
+    loaded plugin.
+  </p>
+</section>
+<section>
+  <h2>Learn class customization in deep</h2>
+  <a href="https://docs.python.org/3/reference/datamodel.html">See Me</a>
+</section>
+<section>
+  <h2>What are descriptors?</h2>
+  <p>Descriptors were introduced to Python way back in version 2.2.</p>
+  <p>
+    They provide the developer with the ability to add
+    <span class="material-bold">managed attributes</span> to objects.
+  </p>
+</section>
+<section>
+  <h2>The Descriptor Protocol</h2>
+  <p>
+    If any of these methods are defined for an object, it is said to be a
+    descriptor.
+  </p>
+  <ul>
+    <li><span class="material-italic">__set__</span></li>
+    <li><span class="material-italic">__get__</span></li>
+    <li><span class="material-italic">__del__</span></li>
+  </ul>
+</section>
+<section>
+  <h2>__get__(self, instance, owner)</h2>
+  <p>
+    Called to get the attribute of the owner class (class attribute access) or
+    of an instance of that class (instance attribute access). owner is always
+    the owner class, while instance is the instance that the attribute was
+    accessed through, or None when the attribute is accessed through the owner.
+    This method should return the (computed) attribute value or raise an
+    AttributeError exception.
+  </p>
+</section>
+<section>
+  <h2>__set__(self, instance, value)</h2>
+  <p>
+    Called to set the attribute on an instance instance of the owner class to a
+    new value, value.
+  </p>
+</section>
+<section>
+  <h2>__del__(self, instnace)</h2>
+  <p>
+    Called to delete the attribute on an instance instance of the owner class.
+  </p>
+</section>
+<section>
+  <h2>__set_name__(self, owner, name)</h2>
+  <h5>New in version 3.6.</h5>
+  <p>
+    Called at the time the owning class owner is created. The descriptor has
+    been assigned to name.
+  </p>
+</section>
+<section>
+  <pre><code class="python">
+    class RevealAccess:
+        '''
+        A data descriptor that sets and returns values
+        normally and prints a message logging their access.
+        '''
+
+        def __init__(self, initval=None, name='var'):
+            self.val = initval
+            self.name = name
+
+        def __get__(self, instance, owner):
+            print('Retrieving', self.name, instance, owner)
+            return self.val
+
+        def __set__(self, instance, val):
+            print('Updating', self.name, instance, val)
+            self.val = val
+
+        def __set_name__(self, owner, name):
+            print('Set name', name, owner)
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/descriptor.py"
+    download
+    ><i class="material-icons">code</i> descriptor.py</a
+  >
+</section>
+<section>
+  <h2>&lt;Code Time.py&gt;</h2>
+  <p>
+    Let's see
+    <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> Object-Relational
+    Mapping (ORM)
+  </p>
+</section>
+<section>
+  <h2>Properties</h2>
+  <p>
+    Calling <span class="material-italic">property()</span> is a succinct way of
+    building a data descriptor that triggers function calls upon access to an
+    attribute.
+  </p>
+  <pre><code class="python">
+    property(fget=None, fset=None, fdel=None, doc=None) -&gt; property attribute
+    </code></pre>
+</section>
+<section>
+  <h2>Properties in Action</h2>
+  <pre><code class="python">
+    class Celsius:
+        def __init__(self, temperature = 0):
+            self._temperature = temperature
+
+        def to_fahrenheit(self):
+            return (self.temperature * 1.8) + 32
+
+        @property
+        def temperature(self):
+            print("Getting value")
+            return self._temperature
+
+        @temperature.setter
+        def temperature(self, value):
+            if value &lt; -273:
+                raise ValueError("Temperature below -273 is not possible")
+            print("Setting value")
+            self._temperature = value
+    </code></pre>
+  <a
+    href="https://raw.githubusercontent.com/1995parham-teaching/Python201/main/src/class/properties.py"
+    download
+    ><i class="material-icons">code</i> properties.py</a
+  >
+</section>
