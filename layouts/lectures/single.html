@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
     {{ $style := resources.Get "scss/lecture.scss" | toCSS | minify }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
-    {{ $style := readFile "node_modules/material-icons/iconfont/material-icons.css" | resources.FromString "material-icons/iconfont/material-icons.css"  | toCSS | minify }}
+    {{ $style := readFile "node_modules/material-icons/iconfont/material-icons.css" | resources.FromString "material-icons/iconfont/material-icons.css" | toCSS | minify }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
   </head>
   <body>
