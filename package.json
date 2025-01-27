@@ -4,7 +4,7 @@
     "devDependencies": {}
   },
   "dependencies": {
-    "material-icons": "^1.13.12"
+    "material-icons": "^1.13.13"
   },
   "name": "python201",
   "version": "0.1.0",
