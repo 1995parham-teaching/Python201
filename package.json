@@ -9,7 +9,7 @@
   "name": "python201",
   "version": "0.1.0",
   "devDependencies": {
-    "bootstrap": "^5.3.5",
+    "bootstrap": "^5.3.6",
     "prettier": "^3.5.3",
     "prettier-plugin-go-template": "^0.0.15",
     "reveal.js": "^5.2.1"
